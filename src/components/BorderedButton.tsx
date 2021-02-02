@@ -1,5 +1,3 @@
-import '../css/akaPosseFont.css';
-
 import {
   Box,
   Button as MuiButton,
@@ -13,7 +11,7 @@ import BorderedButtonRightOrnament from './BorderedButtonRightOrnament';
 
 const Button = styled(MuiButton)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
-  fontSize: theme.typography.h6.fontSize,
+  fontSize: theme.typography.h5.fontSize,
   boxShadow: theme.shadows[24],
   padding: theme.spacing(1),
   '& .MuiButton-label': {

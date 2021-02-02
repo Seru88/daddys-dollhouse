@@ -3,8 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import React from 'react';
 
-import ElevatedImg from '../ElevatedImg';
-
 const useStyles = makeStyles(theme =>
   createStyles({
     hero: {
@@ -41,7 +39,6 @@ const HomePageHero: React.FC = () => {
       alt="home page hero"
       imgStyle={{ width: '100%', height: 'auto' }}
       fluid={imgData}
-      style={{}}
     />
   );
 };

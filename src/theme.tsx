@@ -1,9 +1,9 @@
 import './css/akaPosseFont.css';
 import { createMuiTheme } from '@material-ui/core/styles';
-import grey from '@material-ui/core/colors/grey';
 
 // A custom theme for this app
 let theme = createMuiTheme({
+  typography: {fontFamily: "'AKA Posse', Georgia, serif"},
   palette: {
     type: 'dark',
     primary: {
@@ -27,8 +27,6 @@ let theme = createMuiTheme({
     background: {
       default: '#202023',
       paper: '#282b2f',
-      // default: '#282b2f',
-      // paper: '#202023',
     },
   },
 });
@@ -43,9 +41,8 @@ theme = {
     },
     MuiContainer: {
       root: {
-        // boxShadow: theme.shadows[10],
-        borderLeft: `${theme.spacing(0.4)}px solid transparent`,
-        borderRight: `${theme.spacing(0.4)}px solid transparent`,
+        borderLeft: `3px solid transparent`,
+        borderRight: `3px solid transparent`,
         borderImage: `linear-gradient(-135deg, ${theme.palette.primary.light}, ${theme.palette.primary.dark}) 1`,
         minHeight: '100vh',
         padding: 0,

@@ -12,7 +12,7 @@ const BorderedBoxOrnament: React.FC<BoxProps> = props => {
     query {
       placeholderImage: file(relativePath: { eq: "heart.png" }) {
         childImageSharp {
-          fluid(maxWidth: 56) {
+          fluid(maxWidth: 64) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -24,13 +24,13 @@ const BorderedBoxOrnament: React.FC<BoxProps> = props => {
 
   return (
     <Img
-      imgStyle={{ width: 56, height: 'auto' }}
+      imgStyle={{ width: 64, height: 'auto' }}
       fluid={imgData}
       style={{
         height: 36.39,
-        width: 56,
+        width: 64,
         position: 'absolute',
-        top: -25,
+        top: -28,
         left: 0,
         right: 0,
         margin: '0 auto',
