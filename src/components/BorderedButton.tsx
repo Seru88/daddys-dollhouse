@@ -8,8 +8,11 @@ import React from 'react';
 
 import BorderedButtonLeftOrnament from './BorderedButtonLeftOrnament';
 import BorderedButtonRightOrnament from './BorderedButtonRightOrnament';
+import patchButtonBaseComponent from './patch-base-button-components';
 
-const Button = styled(MuiButton)(({ theme }) => ({
+const GButton = patchButtonBaseComponent<ButtonProps>(MuiButton);
+
+const Button = styled(GButton)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
   fontSize: theme.typography.h5.fontSize,
   boxShadow: theme.shadows[24],
@@ -27,13 +30,16 @@ const InnerBorderBox = styled('div')(({ theme }) => ({
   position: 'relative',
 }));
 
-const BorderedButton: React.FC<
-  ButtonProps & Record<'ornamentPosition', 'left' | 'right'>
-> = props => {
+interface BorderedButtonProps extends ButtonProps {
+  ornamentPosition: 'left' | 'right';
+  to?: string;
+}
+
+const BorderedButton: React.FC<BorderedButtonProps> = props => {
   const { children, ornamentPosition, ...rest } = props;
   return (
     <Button {...rest}>
-      <InnerBorderBox className="use-custom-font">
+      <InnerBorderBox>
         {ornamentPosition === 'left' ? (
           <BorderedButtonLeftOrnament />
         ) : (

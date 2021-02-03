@@ -47,6 +47,7 @@ theme = {
         minHeight: '100vh',
         padding: 0,
         backgroundColor: theme.palette.background.default,
+        position: 'relative'
       },
       maxWidthLg: { padding: 0 },
     },

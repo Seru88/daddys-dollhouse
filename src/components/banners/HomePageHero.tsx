@@ -8,6 +8,7 @@ const useStyles = makeStyles(theme =>
     hero: {
       borderBottom: `${theme.spacing(0.4)}px solid`,
       borderImage: `linear-gradient(to left, ${theme.palette.primary.light}, ${theme.palette.primary.dark}) 1`,
+      marginBottom: theme.spacing(4),
     },
   })
 );
@@ -35,7 +36,7 @@ const HomePageHero: React.FC = () => {
   return (
     <Img
       className={classes.hero}
-      title="Home Page Hero"
+      title="Home Page"
       alt="home page hero"
       imgStyle={{ width: '100%', height: 'auto' }}
       fluid={imgData}
