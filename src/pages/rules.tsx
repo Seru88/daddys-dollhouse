@@ -14,8 +14,13 @@ import React from 'react';
 import RulesHero from '../components/banners/RulesHero';
 import Copyright from '../components/Copyright';
 import SubMessage from '../components/SubMessage';
+import PageContext from '../PageContext';
 
 const CommunityRules: React.FC = () => {
+  const setPageTitle = React.useContext(PageContext);
+  React.useEffect(() => {
+    setPageTitle('Community Rules');
+  }, []);
   return (
     <Container maxWidth="lg">
       <RulesHero />

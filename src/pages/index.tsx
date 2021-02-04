@@ -13,6 +13,7 @@ import BorderedBox from '../components/BorderedBox';
 import BorderedBoxOrnament from '../components/BorderedBoxOrnament';
 import BorderedButton from '../components/BorderedButton';
 import Copyright from '../components/Copyright';
+import PageContext from '../PageContext';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -51,6 +52,10 @@ const useStyles = makeStyles(theme =>
 
 const IndexPage = () => {
   const classes = useStyles();
+  const setPageTitle = React.useContext(PageContext);
+  React.useEffect(() => {
+    setPageTitle('Home');
+  }, []);
   return (
     <Container maxWidth="lg">
       <MainHero />

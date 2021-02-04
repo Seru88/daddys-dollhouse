@@ -1,22 +1,16 @@
-import {
-  Box,
-  Container,
-  Divider,
-  Link,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Typography,
-} from '@material-ui/core';
+import { Box, Container, Divider, Link, Typography } from '@material-ui/core';
 import React from 'react';
 
 import AboutHero from '../components/banners/AboutHero';
 import Copyright from '../components/Copyright';
 import SubMessage from '../components/SubMessage';
+import PageContext from '../PageContext';
 
 const AboutPage: React.FC = () => {
-  // const classes = useStyles();
+  const setPageTitle = React.useContext(PageContext);
+  React.useEffect(() => {
+    setPageTitle('About Us');
+  }, []);
   return (
     <Container maxWidth="lg">
       <AboutHero />
@@ -32,9 +26,7 @@ const AboutPage: React.FC = () => {
             and tiny women - M/f for short.
           </SubMessage>
           <SubMessage align="center" paragraph>
-            Daddy’s Dollhouse is an Adults only forum dedicated to the
-            fascination of size difference, with a specialty focus on Giant men
-            and tiny women - M/f for short.
+            This is a home for all macrophiles and microphiles alike.
           </SubMessage>
         </Box>
         <Divider variant="middle" />
@@ -108,7 +100,17 @@ const AboutPage: React.FC = () => {
           </Typography>
           <Typography paragraph>
             Normalizing M/f fantasies can help empower you, and can help empower
-            others in the community as well!
+            others in the community as well! If you struggle with accepting your
+            fantasies, I highly recommend checking out this short, informative
+            video on secret fantasies.
+          </Typography>
+          <Typography paragraph align="center">
+            <Link
+              href="https://www.youtube.com/watch?v=E7qhI2Hz6pM"
+              target="_blank"
+            >
+              Our Secret Fantasies - YouTube
+            </Link>
           </Typography>
         </Box>
         <Divider variant="middle" />
