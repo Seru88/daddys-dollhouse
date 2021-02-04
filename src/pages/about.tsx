@@ -1,4 +1,5 @@
 import { Box, Container, Divider, Link, Typography } from '@material-ui/core';
+import { Link as GatsbyLink } from 'gatsby';
 import React from 'react';
 
 import AboutHero from '../components/banners/AboutHero';
@@ -15,6 +16,12 @@ const AboutPage: React.FC = () => {
     <Container maxWidth="lg">
       <AboutHero />
       <Box px={3} pb={8}>
+        <Box ml={2} mb={2}>
+          <Link component={GatsbyLink} to="/">
+            HOME
+          </Link>{' '}
+          / ABOUT US
+        </Box>
         <Typography color="primary" variant="h4" align="center" gutterBottom>
           ABOUT US
         </Typography>
@@ -104,14 +111,16 @@ const AboutPage: React.FC = () => {
             fantasies, I highly recommend checking out this short, informative
             video on secret fantasies.
           </Typography>
-          <Typography paragraph align="center">
-            <Link
-              href="https://www.youtube.com/watch?v=E7qhI2Hz6pM"
-              target="_blank"
-            >
-              Our Secret Fantasies - YouTube
-            </Link>
-          </Typography>
+          <Box height={0} paddingBottom="56.25%" position="relative">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/E7qhI2Hz6pM"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, border: 'none' }}
+            />
+          </Box>
         </Box>
         <Divider variant="middle" />
         <Box width="100%" p={3}>
@@ -124,11 +133,11 @@ const AboutPage: React.FC = () => {
           <Typography paragraph>
             While both <em>M/f</em> (Giant male / tiny female) and <em>SW</em>{' '}
             (shrunken woman) imply similarities in context in the broader size
-            kink community, <em>SW</em>
-            is a term that only focuses on the female subject and is intended to
-            entice a mostly male audience. To be more <u>inclusive</u> to our
-            female members, we decided to go with a term that didn’t just
-            fetishize the women, but the men as well. Fair is fair!
+            kink community, <em>SW</em> is a term that only focuses on the
+            female subject and is intended to entice a mostly male audience. To
+            be more <u>inclusive</u> to our female members, we decided to go
+            with a term that didn’t just fetishize the women, but the men as
+            well. Fair is fair!
           </Typography>
           <Typography paragraph>
             While it is totally acceptable to call a tiny woman an <em>SW</em>{' '}

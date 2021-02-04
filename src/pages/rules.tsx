@@ -2,13 +2,14 @@ import {
   Box,
   Container,
   Divider,
+  Link,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText,
-  styled,
   Typography,
 } from '@material-ui/core';
+import { Link as GatsbyLink } from 'gatsby';
 import React from 'react';
 
 import RulesHero from '../components/banners/RulesHero';
@@ -25,6 +26,12 @@ const CommunityRules: React.FC = () => {
     <Container maxWidth="lg">
       <RulesHero />
       <Box px={3} pb={8}>
+        <Box ml={2} mb={2}>
+          <Link component={GatsbyLink} to="/">
+            HOME
+          </Link>{' '}
+          / COMMUNITY RULES
+        </Box>
         <Typography color="primary" variant="h4" align="center" gutterBottom>
           COMMUNITY RULES
         </Typography>
