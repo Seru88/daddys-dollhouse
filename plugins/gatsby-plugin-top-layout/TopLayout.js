@@ -10,7 +10,7 @@ const TopLayout = props => {
   const [title, setTitle] = React.useState('');
   return (
     <React.Fragment>
-      <Helmet titleTemplate="%s | MyAwesomeWebsite.com">
+      <Helmet titleTemplate="%s | DaddysDollhouse.org">
         <title>{title}</title>
         <meta
           name="viewport"
