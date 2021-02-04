@@ -1,11 +1,11 @@
 import { Container } from '@material-ui/core';
 import React from 'react';
-import ResourcesPageHero from '../components/banners/ResourcesPageHero';
+import ResourcesHero from '../components/banners/ResourcesHero';
 
 const KinkResources: React.FC = () => {
   return (
     <Container maxWidth="lg">
-      <ResourcesPageHero />
+      <ResourcesHero />
       Kink Resources
     </Container>
   );

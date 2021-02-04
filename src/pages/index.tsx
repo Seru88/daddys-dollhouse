@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 
-import HomePageHero from '../components/banners/HomePageHero';
+import MainHero from '../components/banners/MainHero';
 import BorderedBox from '../components/BorderedBox';
 import BorderedBoxOrnament from '../components/BorderedBoxOrnament';
 import BorderedButton from '../components/BorderedButton';
@@ -53,7 +53,7 @@ const IndexPage = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="lg">
-      <HomePageHero />
+      <MainHero />
       <Typography variant="h4" align="center" gutterBottom>
         WELCOME TO <span className={classes.primary}>DADDY'S DOLLHOUSE</span>
       </Typography>
@@ -75,7 +75,7 @@ const IndexPage = () => {
                   className={classes.routeBtn}
                   title="About Us"
                   ornamentPosition="left"
-                  disabled
+                  to="/about"
                 >
                   About Us
                 </BorderedButton>

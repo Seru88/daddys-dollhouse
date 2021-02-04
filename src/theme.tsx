@@ -3,7 +3,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 // A custom theme for this app
 let theme = createMuiTheme({
-  typography: {fontFamily: "'AKA Posse', Georgia, serif"},
+  typography: { fontFamily: "'Courier New', Georgia, serif" },
   palette: {
     type: 'dark',
     primary: {
@@ -37,6 +37,7 @@ theme = {
     MuiButton: {
       root: {
         borderRadius: 0,
+        fontFamily: "'AKA Posse','Courier New', Georgia, serif",
       },
     },
     MuiContainer: {
@@ -47,9 +48,23 @@ theme = {
         minHeight: '100vh',
         padding: 0,
         backgroundColor: theme.palette.background.default,
-        position: 'relative'
+        position: 'relative',
       },
       maxWidthLg: { padding: 0 },
+    },
+    MuiDivider: {
+      root: {
+        height: 1,
+        backgroundColor: theme.palette.primary.main,
+      },
+    },
+    MuiTypography: {
+      h4: {
+        fontFamily: "'AKA Posse','Courier New', Georgia, serif",
+      },
+      h5: {
+        fontFamily: "'AKA Posse','Courier New', Georgia, serif",
+      },
     },
   },
 };
