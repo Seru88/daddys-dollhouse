@@ -29,11 +29,21 @@ let theme = createMuiTheme({
       paper: '#282b2f',
     },
   },
+  props: {
+    MuiAccordion: {
+      elevation: 0,
+    }
+  }
 });
 
 theme = {
   ...theme,
   overrides: {
+    MuiAccordion: {
+      root: {
+        backgroundColor: theme.palette.background.default,
+      }
+    },
     MuiButton: {
       root: {
         borderRadius: 0,

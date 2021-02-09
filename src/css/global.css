@@ -1,5 +1,9 @@
 @import "./akaPosseFont.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url(../images/BG_tile.png);
   background-position: 'top left';

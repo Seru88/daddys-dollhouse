@@ -157,7 +157,6 @@ const IndexPage = () => {
                   to="/resources"
                   title="Kink Resources"
                   ornamentPosition="left"
-                  disabled
                 >
                   Kink Resources
                 </BorderedButton>
