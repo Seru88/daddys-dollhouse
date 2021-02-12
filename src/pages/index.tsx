@@ -170,9 +170,9 @@ const IndexPage = () => {
                 </BorderedButton>
                 <BorderedButton
                   className={classes.routeBtn}
+                  to="/dictionary"
                   title="Dictionary"
                   ornamentPosition="left"
-                  disabled
                 >
                   Dictionary
                 </BorderedButton>
