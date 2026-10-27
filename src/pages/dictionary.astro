@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Copyright from '../components/Copyright.astro';
+import HeroImg from '../components/HeroImg.astro';
+import heroDictionary from '../images/hero_kink_dictionairy.png';
+import tagsInfo from '../tags.json';
+---
+
+<Base title="Dictionary">
+  <div class="container">
+    <HeroImg src={heroDictionary} alt="about us banner" />
+    <div class="breadcrumb">
+      <a href="/">HOME</a>{' '} / DICTIONARY
+    </div>
+    <h1 class="page-title">DICTIONARY</h1>
+    <hr class="divider" />
+    <section class="section">
+      <p class="lead">
+        Gather ‘round the backyard for a discussion on common lingo in the
+        community! Below you’ll find our forum tag list with definitions and
+        related vernacular.
+      </p>
+    </section>
+    <hr class="divider" />
+    <div class="page-body deep">
+      <div class="grid items-center">
+        {
+          tagsInfo.tags.map(tag => (
+            <>
+              <div class="col-md-2">
+                <a href={tag.link}>
+                  <span class="tag-name">{tag.name}</span>
+                </a>
+              </div>
+              <div class="col-md-9">
+                <span class="rule-primary">{tag.definition}</span>
+                {tag.alt !== '' && (
+                  <span class="rule-secondary">{tag.alt}</span>
+                )}
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+    <Copyright />
+  </div>
+</Base>

@@ -1,0 +1,484 @@
+/* Daddy's Dollhouse - global styles.
+   Replaces the Material-UI theme (src/theme.tsx) used by the Gatsby version. */
+
+/* ---------- fonts ---------- */
+@font-face {
+  font-family: 'AKA Posse';
+  src: url('../fonts/akaPosse.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* ---------- design tokens ---------- */
+:root {
+  --primary: #d79459;
+  --primary-light: #dfa97a;
+  --primary-dark: #96673e;
+  --bg: #202023;
+  --paper: #282b2f;
+  --error: #793030;
+  --error-light: #935959;
+  --text: #fff;
+  --text-dim: rgba(255, 255, 255, 0.7);
+  --gradient-border: linear-gradient(
+    -135deg,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+  --font-body: 'Courier New', Georgia, serif;
+  --font-display: 'AKA Posse', 'Courier New', Georgia, serif;
+  --shadow-24:
+    0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- baseline (replaces CssBaseline) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: url('../images/BG_tile.png');
+  background-repeat: repeat;
+  background-size: 19%;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+p {
+  margin: 0 0 16px;
+  /* the prose sits a touch dimmer than the headings */
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* ---------- typography ---------- */
+.page-title {
+  margin: 0 0 0.35em;
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: 2.125rem;
+  line-height: 1.235;
+  text-align: center;
+}
+
+/* the home title has no color prop, only its highlighted part */
+.page-title.plain {
+  color: var(--text);
+}
+
+.section-title {
+  margin: 0 0 0.35em;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.summary {
+  margin: 0 auto 0.35em;
+  max-width: 325px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.lead {
+  max-width: 80%;
+  margin: 16px auto;
+  text-align: center;
+}
+
+.gutter-bottom {
+  margin-bottom: 0.35em;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.nested {
+  padding-left: 40px;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-mature {
+  color: var(--error-light);
+}
+
+.tag-name {
+  display: block;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* ---------- layout ---------- */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: var(--bg);
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-image: var(--gradient-border) 1;
+}
+
+.page-body {
+  padding: 0 24px 64px;
+}
+
+/* Box p={3} pb={8} */
+.page-body.padded {
+  padding: 24px 24px 64px;
+}
+
+/* Box p={3} pb={10} */
+.page-body.deep {
+  padding: 24px 24px 80px;
+}
+
+.section {
+  padding: 24px;
+}
+
+.breadcrumb {
+  margin: 0 0 16px 16px;
+}
+
+.divider {
+  height: 1px;
+  margin: 0 16px;
+  border: 0;
+  background-color: var(--primary);
+}
+
+.bottom-space {
+  margin-bottom: 16px;
+}
+
+/* MUI Grid replica: flex items with percentage widths and 16px gutters.
+   The grid box overhangs its parent by 16px on each side, the items are
+   inset by their own 16px padding. */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 32px);
+  margin: -16px;
+}
+
+.grid > * {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 16px;
+}
+
+/* Grid justify="center" */
+.grid.centered {
+  justify-content: center;
+}
+
+/* Grid alignItems="center" */
+.grid.items-center {
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .grid > .col-md-2 {
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
+  }
+
+  .grid > .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid > .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .grid > .col-lg-5 {
+    flex: 0 0 41.6667%;
+    max-width: 41.6667%;
+  }
+}
+
+@media (max-width: 1279.95px) {
+  .grid > .order-first-mobile {
+    order: -1;
+  }
+}
+
+/* ---------- hero ---------- */
+.hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 32px;
+  border-bottom: 3.2px solid;
+  border-image: linear-gradient(
+      to left,
+      var(--primary-light),
+      var(--primary-dark)
+    )
+    1;
+}
+
+/* ---------- bordered box ---------- */
+.bordered-box {
+  border: 3.2px solid;
+  border-image: var(--gradient-border) 1;
+}
+
+.bordered-box-inner {
+  position: relative;
+  border: 5px solid transparent;
+}
+
+.ornament-heart {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  right: 0;
+  width: 64px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px;
+  border: 0;
+  border-radius: 0;
+  background-color: var(--paper);
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--shadow-24);
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.btn:hover {
+  background-color: rgba(215, 148, 89, 0.08);
+  text-decoration: none;
+}
+
+.btn-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 2px solid;
+  border-image: var(--gradient-border) 1;
+}
+
+.btn-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-ornament {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: auto;
+}
+
+.btn-ornament-left {
+  left: 0;
+}
+
+.btn-ornament-right {
+  right: 0;
+}
+
+.btn[disabled],
+.btn[aria-disabled='true'] {
+  color: rgba(215, 148, 89, 0.4);
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn-route {
+  width: 88%;
+  height: 70px;
+}
+
+.btn-enter {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 42px;
+  text-align: center;
+}
+
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 16px 0;
+}
+
+.mid-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 330px;
+  padding: 8px;
+}
+
+/* ---------- lists ---------- */
+.rule-list {
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.rule-list li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+}
+
+/* an item that holds a nested list must stack, not sit side by side */
+.rule-list li.has-nested {
+  display: block;
+}
+
+/* the nested list spans the full width of the parent list, like MUI's */
+.rule-list li.has-nested > .rule-list {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.rule-list li.nested {
+  padding-left: 40px;
+}
+
+.rule-icon {
+  flex-shrink: 0;
+  min-width: 56px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.rule-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 4px 0;
+}
+
+.rule-primary {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.rule-heading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.rule-secondary {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.875rem;
+  line-height: 1.43;
+}
+
+/* ---------- misc ---------- */
+.video-wrap {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.img-fluid {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  color: var(--primary);
+  font-family: 'Courier New', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  text-align: center;
+}

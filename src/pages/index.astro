@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroImg from '../components/HeroImg.astro';
+import BorderedBox from '../components/BorderedBox.astro';
+import BorderedBoxOrnament from '../components/BorderedBoxOrnament.astro';
+import BorderedButton from '../components/BorderedButton.astro';
+import Copyright from '../components/Copyright.astro';
+import heroHome from '../images/hero_home.png';
+---
+
+<Base title="Home">
+  <div class="container">
+    <HeroImg src={heroHome} alt="home page hero" />
+    <h1 class="page-title plain">
+      WELCOME TO <span class="text-primary">DADDY'S DOLLHOUSE</span>
+    </h1>
+    <div class="page-body padded">
+      <div class="grid centered">
+        <div class="col-lg-3 bottom-space">
+          <BorderedBox height={330}>
+            <BorderedBoxOrnament />
+            <div class="button-stack">
+              <BorderedButton
+                to="/about"
+                title="About Us"
+                ornamentPosition="left"
+                class="btn-route"
+              >
+                About Us
+              </BorderedButton>
+              <BorderedButton
+                to="/rules"
+                title="Community Rules"
+                ornamentPosition="right"
+                class="btn-route"
+              >
+                Community Rules
+              </BorderedButton>
+              <BorderedButton
+                title="Helpful links"
+                ornamentPosition="left"
+                class="btn-route"
+                disabled
+              >
+                Helpful Links
+              </BorderedButton>
+            </div>
+          </BorderedBox>
+        </div>
+        <div class="col-lg-5 bottom-space order-first-mobile">
+          <div class="mid-box">
+            <p class="summary">
+              <span class="text-primary">DADDY'S DOLLHOUSE</span> IS AN<br />
+              <span class="text-mature">ADULTS ONLY</span> FORUM DEDICATED TO THE
+              JUDGE-FREE DISCUSSION OF{' '}
+              <span class="text-primary">GIANT MEN</span> &amp;{' '}
+              <span class="text-primary">tiny women</span>
+            </p>
+            <BorderedButton
+              href="https://forum.daddysdollhouse.org"
+              title="Enter Forum"
+              ornamentPosition="left"
+              class="btn-enter"
+            >
+              Enter Forum
+            </BorderedButton>
+          </div>
+        </div>
+        <div class="col-lg-3 bottom-space">
+          <BorderedBox height={330}>
+            <BorderedBoxOrnament />
+            <div class="button-stack">
+              <BorderedButton
+                to="/resources"
+                title="Kink Resources"
+                ornamentPosition="left"
+                class="btn-route"
+              >
+                Kink Resources
+              </BorderedButton>
+              <BorderedButton
+                title="Get Involved"
+                ornamentPosition="right"
+                class="btn-route"
+                disabled
+              >
+                Get Involved
+              </BorderedButton>
+              <BorderedButton
+                to="/dictionary"
+                title="Dictionary"
+                ornamentPosition="left"
+                class="btn-route"
+              >
+                Dictionary
+              </BorderedButton>
+            </div>
+          </BorderedBox>
+        </div>
+      </div>
+    </div>
+    <Copyright />
+  </div>
+</Base>

@@ -1,0 +1,42 @@
+---
+import ornamentLeft from '../images/ic_decoration_left.png';
+import ornamentRight from '../images/ic_decoration_right.png';
+
+interface Props {
+  to?: string;
+  href?: string;
+  title?: string;
+  disabled?: boolean;
+  class?: string;
+  ornamentPosition?: 'left' | 'right';
+}
+
+const {
+  to,
+  href,
+  title,
+  disabled = false,
+  class: className = '',
+  ornamentPosition = 'left',
+} = Astro.props;
+
+const url = href ?? to;
+const ornament = ornamentPosition === 'left' ? ornamentLeft : ornamentRight;
+const ornamentSide =
+  ornamentPosition === 'left' ? 'btn-ornament-left' : 'btn-ornament-right';
+const Tag = url ? 'a' : 'button';
+const attrs = url ? { href: url } : { type: 'button', disabled };
+---
+
+<Tag class={`btn ${className}`} title={title} {...attrs}>
+  <span class="btn-inner">
+    <img
+      class={`btn-ornament ${ornamentSide}`}
+      src={ornament.src}
+      alt=""
+      width="30"
+      height="30"
+    />
+    <span class="btn-label"><slot /></span>
+  </span>
+</Tag>

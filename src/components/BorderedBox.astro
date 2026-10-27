@@ -1,0 +1,25 @@
+---
+import { getImage } from 'astro:assets';
+import containerInfo from '../images/container_info.png';
+
+interface Props {
+  height?: number;
+}
+
+const { height } = Astro.props;
+
+// the frame is drawn from a 350px wide copy - the size the old
+// gatsby-image fluid(maxWidth: 350) source used
+const frame = await getImage({ src: containerInfo, width: 350 });
+---
+
+<div class="bordered-box">
+  <div
+    class="bordered-box-inner"
+    style={`border-image: url(${frame.src}) 50 / 50px repeat;${
+      height ? `height: ${height}px;` : ''
+    }`}
+  >
+    <slot />
+  </div>
+</div>
