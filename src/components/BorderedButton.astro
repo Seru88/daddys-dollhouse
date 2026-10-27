@@ -3,7 +3,6 @@ import ornamentLeft from '../images/ic_decoration_left.png';
 import ornamentRight from '../images/ic_decoration_right.png';
 
 interface Props {
-  to?: string;
   href?: string;
   title?: string;
   disabled?: boolean;
@@ -12,7 +11,6 @@ interface Props {
 }
 
 const {
-  to,
   href,
   title,
   disabled = false,
@@ -20,7 +18,7 @@ const {
   ornamentPosition = 'left',
 } = Astro.props;
 
-const url = href ?? to;
+const url = href;
 const ornament = ornamentPosition === 'left' ? ornamentLeft : ornamentRight;
 const ornamentSide =
   ornamentPosition === 'left' ? 'btn-ornament-left' : 'btn-ornament-right';

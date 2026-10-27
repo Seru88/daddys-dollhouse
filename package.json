@@ -11,7 +11,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write \"**/*.{astro,ts,js,json,md,css}\""
+    "format": "prettier --write \"**/*.{astro,ts,js,mjs,json,md,css,yml}\"",
+    "check": "prettier --check \"**/*.{astro,ts,js,mjs,json,md,css,yml}\"",
+    "icons": "node scripts/make-icons.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2",
