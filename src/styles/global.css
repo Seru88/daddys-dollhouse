@@ -8,6 +8,32 @@
   font-display: swap;
 }
 
+/* Courier Prime ships only 400/700, no medium weight.
+   License: src/fonts/OFL.txt */
+@font-face {
+  font-family: 'Courier Prime';
+  src: url('../fonts/courierPrime-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  src: url('../fonts/courierPrime-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  src: url('../fonts/courierPrime-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* ---------- design tokens ---------- */
 :root {
   --primary: #d79459;
@@ -23,8 +49,8 @@
     var(--primary-light),
     var(--primary-dark)
   );
-  --font-body: 'Courier New', Georgia, serif;
-  --font-display: 'AKA Posse', 'Courier New', Georgia, serif;
+  --font-body: 'Courier Prime', 'Courier New', Georgia, serif;
+  --font-display: 'AKA Posse', 'Courier Prime', 'Courier New', Georgia, serif;
   --shadow-24:
     0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14),
     0 9px 46px 8px rgba(0, 0, 0, 0.12);
@@ -83,6 +109,12 @@ a:focus {
   text-decoration: underline;
 }
 
+/* keyboard focus only; mouse clicks don't leave a ring behind */
+:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
 /* ---------- typography ---------- */
 .page-title {
   margin: 0 0 0.35em;
@@ -100,8 +132,7 @@ a:focus {
 
 .section-title {
   margin: 0 0 0.35em;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
@@ -300,7 +331,6 @@ a:focus {
   color: var(--primary);
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 500;
   line-height: 1.75;
   letter-spacing: 0.00938em;
   text-transform: uppercase;
@@ -437,7 +467,6 @@ a:focus {
 
 .rule-heading {
   font-size: 1.25rem;
-  font-weight: 500;
   line-height: 1.6;
 }
 
@@ -478,7 +507,7 @@ a:focus {
   max-width: 500px;
   margin: 0 auto;
   color: var(--primary);
-  font-family: 'Courier New', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   line-height: 1.66;
   text-align: center;
