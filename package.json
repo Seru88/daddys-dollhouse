@@ -11,6 +11,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "prepare": "lefthook install",
     "format": "prettier --write \"**/*.{astro,ts,js,mjs,json,md,css,yml}\"",
     "check": "prettier --check \"**/*.{astro,ts,js,mjs,json,md,css,yml}\"",
     "icons": "node scripts/make-icons.mjs"
@@ -20,6 +21,7 @@
     "sharp": "^0.35.5"
   },
   "devDependencies": {
+    "lefthook": "^2.2.2",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1"
   }
