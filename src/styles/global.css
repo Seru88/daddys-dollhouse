@@ -66,6 +66,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Reserve the scrollbar gutter on short pages, so every page has the same width. */
+  scrollbar-gutter: stable;
 }
 
 body {
