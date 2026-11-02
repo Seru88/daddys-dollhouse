@@ -2,13 +2,14 @@
 import Base from '../layouts/Base.astro';
 import Copyright from '../components/Copyright.astro';
 import HeroImg from '../components/HeroImg.astro';
+import { crossDissolve } from '../transitions';
 import heroAbout from '../images/hero_about.png';
 ---
 
 <Base title="About Us">
   <div class="container">
     <HeroImg src={heroAbout} alt="about us banner" />
-    <div class="page-body">
+    <div class="page-body" transition:animate={crossDissolve}>
       <div class="breadcrumb">
         <a href="/">HOME</a>{' '} / ABOUT US
       </div>

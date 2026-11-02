@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import Copyright from '../components/Copyright.astro';
+import { crossDissolve } from '../transitions';
 ---
 
 <Base title="Page not found">
   <div class="container">
     <h1 class="page-title">404: Not Found</h1>
-    <div class="page-body">
+    <div class="page-body" transition:animate={crossDissolve}>
       <p class="lead">
         You just hit a route that doesn&#39;t exist... the sadness.
       </p>

@@ -2,13 +2,14 @@
 import Base from '../layouts/Base.astro';
 import Copyright from '../components/Copyright.astro';
 import HeroImg from '../components/HeroImg.astro';
+import { crossDissolve } from '../transitions';
 import heroRules from '../images/hero_community_rules.png';
 ---
 
 <Base title="Community Rules">
   <div class="container">
     <HeroImg src={heroRules} alt="community rules banner" />
-    <div class="page-body">
+    <div class="page-body" transition:animate={crossDissolve}>
       <div class="breadcrumb">
         <a href="/">HOME</a>{' '} / COMMUNITY RULES
       </div>

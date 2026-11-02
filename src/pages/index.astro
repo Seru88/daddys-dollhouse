@@ -5,16 +5,17 @@ import BorderedBox from '../components/BorderedBox.astro';
 import BorderedBoxOrnament from '../components/BorderedBoxOrnament.astro';
 import BorderedButton from '../components/BorderedButton.astro';
 import Copyright from '../components/Copyright.astro';
+import { growFade } from '../transitions';
 import heroHome from '../images/hero_home.png';
 ---
 
 <Base title="Home">
   <div class="container">
     <HeroImg src={heroHome} alt="home page hero" />
-    <h1 class="page-title plain">
-      WELCOME TO <span class="text-primary">DADDY'S DOLLHOUSE</span>
-    </h1>
-    <div class="page-body padded">
+    <div class="page-body padded" transition:animate={growFade}>
+      <h1 class="page-title plain">
+        WELCOME TO <span class="text-primary">DADDY'S DOLLHOUSE</span>
+      </h1>
       <div class="grid centered">
         <div class="col-lg-3 bottom-space">
           <BorderedBox height={330}>

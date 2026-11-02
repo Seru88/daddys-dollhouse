@@ -39,3 +39,25 @@ and wrap the page in `<div class="container">`. Use the existing classes from
 
 `npm run build` writes a fully static site to `dist/`. Any static host works;
 point the build command at `npm run build` and the publish directory at `dist/`.
+
+This repo also has a GitHub Actions workflow (`.github/workflows/deploy.yml`)
+that builds and deploys to the DigitalOcean droplet on every push to `main`.
+
+Required repository secrets (Settings → Secrets and variables → Actions):
+
+| Secret           | Value                                              |
+| ---------------- | -------------------------------------------------- |
+| `DEPLOY_SSH_KEY` | Private SSH key authorized on the droplet          |
+| `DEPLOY_HOST`    | Droplet IP or hostname (e.g. `165.227.66.154`)     |
+| `DEPLOY_USER`    | SSH user (e.g. `seru`)                             |
+| `DEPLOY_PATH`    | Destination directory (e.g. `/var/www/ddh/public`) |
+
+The public key must be in the droplet’s `~/.ssh/authorized_keys` for the user
+specified in `DEPLOY_USER`.
+
+To deploy manually from this machine:
+
+```bash
+npm run build
+rsync -avz --delete dist/ ddh:/var/www/ddh/public/
+```
