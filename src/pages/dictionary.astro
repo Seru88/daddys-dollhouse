@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import SiteNav from '../components/SiteNav.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
 import heroDictionary from '../images/hero_kink_dictionairy.webp';
@@ -15,6 +16,7 @@ const tags = tagsInfo.tags;
 >
   <div class="container">
     <HeroImg src={heroDictionary} alt="" />
+    <SiteNav />
     <div class="page-body" transition:animate={crossDissolve}>
       <Breadcrumb current="Dictionary" />
       <h1 class="page-title" id="page-title" tabindex="-1">DICTIONARY</h1>

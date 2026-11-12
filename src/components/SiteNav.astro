@@ -1,0 +1,70 @@
+---
+import BorderedBox from './BorderedBox.astro';
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About' },
+  { href: '/rules/', label: 'Rules' },
+  { href: '/resources/', label: 'Resources' },
+  { href: '/dictionary/', label: 'Dictionary' },
+];
+const isCurrent = (href: string) => {
+  const path = href.replace(/\/$/, '') || '/';
+  return currentPath === path || currentPath.startsWith(`${path}/`);
+};
+---
+
+<div class="site-nav-frame">
+  <BorderedBox>
+    <nav class="desktop-nav" aria-label="Primary">
+      <ul>
+        {
+          navItems.map(item => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isCurrent(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a class="nav-forum" href="https://forum.daddysdollhouse.org">
+            Forum
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <details class="mobile-nav">
+      <summary>
+        Menu
+        <span class="mobile-nav-caret" aria-hidden="true">▾</span>
+      </summary>
+      <nav aria-label="Primary mobile">
+        <ul>
+          {
+            navItems.map(item => (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={isCurrent(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+            <a class="nav-forum" href="https://forum.daddysdollhouse.org">
+              Forum
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </details>
+  </BorderedBox>
+</div>
