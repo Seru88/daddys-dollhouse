@@ -3,10 +3,13 @@ import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
-import heroResources from '../images/hero_kink_resources.png';
+import heroResources from '../images/hero_kink_resources.webp';
 ---
 
-<Base title="Kink Resources">
+<Base
+  title="Kink Resources"
+  description="A practical size-kink guide covering self-acceptance, communication, BDSM principles, roleplay techniques and aftercare."
+>
   <div class="container">
     <HeroImg src={heroResources} alt="" />
     <div class="page-body" transition:animate={crossDissolve}>
@@ -144,7 +147,7 @@ import heroResources from '../images/hero_kink_resources.png';
           specifically with individuals like ourselves and can help you manage
           and better understand your mind, sexually and romantically. My husband
           and I both found our kink-aware therapists at{' '}
-          <a href="http://www.therapyden.com"> Therapy Den </a>
+          <a href="https://www.therapyden.com"> Therapy Den </a>
           , but feel free to google the term “Kink-aware therapist” as there are lots
           of options nowadays!
         </p>

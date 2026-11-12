@@ -5,10 +5,13 @@ import BorderedBox from '../components/BorderedBox.astro';
 import BorderedBoxOrnament from '../components/BorderedBoxOrnament.astro';
 import BorderedButton from '../components/BorderedButton.astro';
 import { growFade } from '../transitions';
-import heroHome from '../images/hero_home.png';
+import heroHome from '../images/hero_home.webp';
 ---
 
-<Base title="Home">
+<Base
+  title="Home"
+  description="Daddy’s Dollhouse is an adults-only community for fans of giant men and tiny women, with resources, community rules and a full size-kink dictionary."
+>
   <div class="container">
     <HeroImg src={heroHome} alt="" />
     <div class="page-body padded" transition:animate={growFade}>

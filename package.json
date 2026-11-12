@@ -14,7 +14,8 @@
     "prepare": "lefthook install",
     "format": "prettier --write \"**/*.{astro,ts,js,mjs,json,md,css,yml}\"",
     "check": "prettier --check \"**/*.{astro,ts,js,mjs,json,md,css,yml}\"",
-    "icons": "node scripts/make-icons.mjs"
+    "icons": "node scripts/make-icons.mjs",
+    "check:a11y": "node scripts/check-a11y.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2",
