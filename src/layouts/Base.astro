@@ -12,12 +12,9 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <ClientRouter />
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="minimum-scale=1, initial-scale=1, width=device-width"
-    />
+    <ClientRouter />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="keywords"
       content="macrophilia, microphilia, shrunken woman, giant man, size fetish, community"
@@ -45,6 +42,18 @@ const { title } = Astro.props;
     <title>{title} | DaddysDollhouse.org</title>
   </head>
   <body>
-    <slot />
+    <a class="skip-link" href="#page-title">Skip to content</a>
+    <main id="main" class="site-main" tabindex="-1">
+      <slot />
+    </main>
+    <script>
+      // ClientRouter swaps the page without moving focus. Move it to the new
+      // heading so keyboard and screen-reader users start at the new content.
+      document.addEventListener('astro:after-swap', () => {
+        const heading = document.querySelector<HTMLElement>('#page-title');
+        if (!heading) return;
+        heading.focus({ preventScroll: true });
+      });
+    </script>
   </body>
 </html>

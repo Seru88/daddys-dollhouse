@@ -41,9 +41,10 @@
   --primary-dark: #96673e;
   --bg: #202023;
   --paper: #282b2f;
-  --error-light: #935959;
+  --error-light: #c88282;
   --text: #fff;
   --text-dim: rgba(255, 255, 255, 0.7);
+  color-scheme: dark;
   --gradient-border: linear-gradient(
     -135deg,
     var(--primary-light),
@@ -83,6 +84,41 @@ body {
   line-height: 1.43;
 }
 
+.site-main {
+  display: block;
+}
+
+/* the skip link only appears once it has keyboard focus */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 12px 20px;
+  background-color: var(--primary);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+  text-decoration: none;
+  transform: translateY(0);
+}
+
+.site-main:focus {
+  outline: none;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
 h1,
 h2,
 h3,
@@ -103,12 +139,20 @@ p {
 
 a {
   color: var(--primary);
-  text-decoration: none;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.18em;
 }
 
 a:hover,
-a:focus {
-  text-decoration: underline;
+a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+/* buttons are links visually, not in prose: no underline */
+a.btn {
+  text-decoration: none;
 }
 
 /* keyboard focus only; mouse clicks don't leave a ring behind */
@@ -174,6 +218,7 @@ a:focus {
 
 .text-mature {
   color: var(--error-light);
+  white-space: nowrap;
 }
 
 .tag-name {
@@ -217,6 +262,43 @@ a:focus {
 
 .breadcrumb {
   margin: 0 0 16px 16px;
+  font-size: 0.875rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb li + li::before {
+  color: var(--text-dim);
+  content: '/';
+}
+
+.breadcrumb a {
+  display: inline-block;
+  /* enlarge the hit area to at least 24px without moving the text */
+  margin: -4px -6px;
+  padding: 4px 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.breadcrumb [aria-current='page'] {
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .divider {
@@ -257,6 +339,18 @@ a:focus {
 }
 
 @media (min-width: 960px) {
+  .home-grid > .home-left {
+    order: 1;
+  }
+
+  .home-grid > .home-center {
+    order: 2;
+  }
+
+  .home-grid > .home-right {
+    order: 3;
+  }
+
   .grid > .col-md-2 {
     flex: 0 0 16.6667%;
     max-width: 16.6667%;
@@ -283,10 +377,6 @@ a:focus {
 }
 
 @media (max-width: 959.95px) {
-  .grid > .order-first-mobile {
-    order: -1;
-  }
-
   /* leave a gutter either side so the body tile shows through */
   .container {
     width: auto;
@@ -317,6 +407,8 @@ a:focus {
 
 .bordered-box-inner {
   position: relative;
+  display: flex;
+  flex-direction: column;
   border: 5px solid transparent;
 }
 
@@ -357,9 +449,8 @@ a:focus {
 }
 
 .btn-inner {
-  display: block;
+  display: flex;
   width: 100%;
-  height: 100%;
   position: relative;
   border: 2px solid;
   border-image: var(--gradient-border) 1;
@@ -367,11 +458,11 @@ a:focus {
 
 .btn-label {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 100%;
 }
 
 .btn-ornament {
@@ -398,10 +489,16 @@ a:focus {
 
 .btn-route {
   width: 88%;
-  height: 70px;
+  /* min-height, not height: labels stay intact when text spacing increases */
+  min-height: 70px;
   /* the three-column grid narrows these buttons; keep the longest label
      ("Community Rules", 180px at 1.5rem) on one line */
   font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+}
+
+.btn-route .btn-inner {
+  /* 70px outer height minus the button's 8px padding on each side */
+  min-height: 54px;
 }
 
 .btn-enter {
@@ -413,11 +510,11 @@ a:focus {
 
 .button-stack {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 100%;
   padding: 16px 0;
 }
 
@@ -527,6 +624,17 @@ a:focus {
   text-align: center;
 }
 
+/* ---------- 404 ---------- */
+.not-found .page-body {
+  padding-top: clamp(48px, 12vh, 120px);
+  padding-bottom: 120px;
+}
+
+.not-found-cta {
+  max-width: 360px;
+  margin: 24px auto 0;
+}
+
 /* ---------- page transitions ---------- */
 @keyframes growIn {
   from {
@@ -571,5 +679,20 @@ a:focus {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

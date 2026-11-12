@@ -13,12 +13,31 @@ import heroHome from '../images/hero_home.png';
   <div class="container">
     <HeroImg src={heroHome} alt="home page hero" />
     <div class="page-body padded" transition:animate={growFade}>
-      <h1 class="page-title plain">
+      <h1 class="page-title plain" id="page-title" tabindex="-1">
         WELCOME TO <span class="text-primary">DADDY'S DOLLHOUSE</span>
       </h1>
-      <div class="grid centered">
-        <div class="col-lg-3 bottom-space">
-          <BorderedBox height={330}>
+      <div class="grid centered home-grid">
+        <div class="col-lg-5 bottom-space home-center">
+          <div class="mid-box">
+            <p class="summary">
+              <span class="text-primary">DADDY'S DOLLHOUSE</span> IS AN{' '}
+              <span class="text-mature">ADULTS ONLY</span> FORUM DEDICATED TO THE
+              JUDGE-FREE DISCUSSION OF{' '}
+              <span class="text-primary">GIANT MEN</span> &amp;{' '}
+              <span class="text-primary">tiny women</span>
+            </p>
+            <BorderedButton
+              href="https://forum.daddysdollhouse.org"
+              title="Enter Forum"
+              ornamentPosition="left"
+              class="btn-enter"
+            >
+              Enter Forum
+            </BorderedButton>
+          </div>
+        </div>
+        <div class="col-lg-3 bottom-space home-left">
+          <BorderedBox minHeight={330}>
             <BorderedBoxOrnament />
             <div class="button-stack">
               <BorderedButton
@@ -48,27 +67,8 @@ import heroHome from '../images/hero_home.png';
             </div>
           </BorderedBox>
         </div>
-        <div class="col-lg-5 bottom-space order-first-mobile">
-          <div class="mid-box">
-            <p class="summary">
-              <span class="text-primary">DADDY'S DOLLHOUSE</span> IS AN
-              <span class="text-mature">ADULTS ONLY</span> FORUM DEDICATED TO THE
-              JUDGE-FREE DISCUSSION OF{' '}
-              <span class="text-primary">GIANT MEN</span> &amp;{' '}
-              <span class="text-primary">tiny women</span>
-            </p>
-            <BorderedButton
-              href="https://forum.daddysdollhouse.org"
-              title="Enter Forum"
-              ornamentPosition="left"
-              class="btn-enter"
-            >
-              Enter Forum
-            </BorderedButton>
-          </div>
-        </div>
-        <div class="col-lg-3 bottom-space">
-          <BorderedBox height={330}>
+        <div class="col-lg-3 bottom-space home-right">
+          <BorderedBox minHeight={330}>
             <BorderedBoxOrnament />
             <div class="button-stack">
               <BorderedButton
