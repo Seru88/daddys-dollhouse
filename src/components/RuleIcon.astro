@@ -1,0 +1,52 @@
+---
+interface Props {
+  kind: 'allowed' | 'denied' | 'caution';
+}
+
+const { kind } = Astro.props;
+---
+
+<span class={`rule-icon rule-icon-${kind}`} aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" focusable="false">
+    {
+      kind === 'allowed' && (
+        <path
+          d="M5 12.5 10 17.5 19 7"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      )
+    }
+    {
+      kind === 'denied' && (
+        <path
+          d="M6 6l12 12M18 6 6 18"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+        />
+      )
+    }
+    {
+      kind === 'caution' && (
+        <>
+          <path
+            d="M12 4 21 20H3L12 4Z"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 10v4"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+          />
+          <circle cx="12" cy="17" r="1" fill="currentColor" />
+        </>
+      )
+    }
+  </svg>
+</span>

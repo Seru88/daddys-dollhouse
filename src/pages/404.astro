@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import BorderedButton from '../components/BorderedButton.astro';
-import Copyright from '../components/Copyright.astro';
 import { crossDissolve } from '../transitions';
 ---
 
@@ -17,17 +16,11 @@ import { crossDissolve } from '../transitions';
           You just hit a route that doesn't exist... the sadness.
         </p>
         <div class="not-found-cta">
-          <BorderedButton
-            href="/"
-            title="Return home"
-            ornamentPosition="left"
-            class="btn-route"
-          >
+          <BorderedButton href="/" ornamentPosition="left" class="btn-route">
             Return Home
           </BorderedButton>
         </div>
       </section>
     </div>
-    <Copyright />
   </div>
 </Base>
