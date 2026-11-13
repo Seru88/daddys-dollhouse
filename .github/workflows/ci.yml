@@ -23,3 +23,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Check accessibility and SEO basics
+        run: npm run check:a11y

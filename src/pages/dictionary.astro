@@ -3,13 +3,16 @@ import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
-import heroDictionary from '../images/hero_kink_dictionairy.png';
+import heroDictionary from '../images/hero_kink_dictionairy.webp';
 import tagsInfo from '../tags.json';
 
 const tags = tagsInfo.tags;
 ---
 
-<Base title="Dictionary">
+<Base
+  title="Dictionary"
+  description="Definitions for Daddy’s Dollhouse forum tags, from 2D artwork and giant/tiny terms to vore, aftercare and alternative lingo."
+>
   <div class="container">
     <HeroImg src={heroDictionary} alt="" />
     <div class="page-body" transition:animate={crossDissolve}>

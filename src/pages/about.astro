@@ -3,10 +3,13 @@ import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
-import heroAbout from '../images/hero_about.png';
+import heroAbout from '../images/hero_about.webp';
 ---
 
-<Base title="About Us">
+<Base
+  title="About Us"
+  description="How Daddy’s Dollhouse began and why this adults-only size-kink community exists."
+>
   <div class="container">
     <HeroImg src={heroAbout} alt="" />
     <div class="page-body" transition:animate={crossDissolve}>

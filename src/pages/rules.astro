@@ -4,10 +4,13 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import RuleIcon from '../components/RuleIcon.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
-import heroRules from '../images/hero_community_rules.png';
+import heroRules from '../images/hero_community_rules.webp';
 ---
 
-<Base title="Community Rules">
+<Base
+  title="Community Rules"
+  description="The community rules for Daddy’s Dollhouse: inclusion, consent, content limits and respectful forum conduct."
+>
   <div class="container">
     <HeroImg src={heroRules} alt="" />
     <div class="page-body" transition:animate={crossDissolve}>

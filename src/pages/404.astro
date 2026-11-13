@@ -5,7 +5,11 @@ import BorderedButton from '../components/BorderedButton.astro';
 import { crossDissolve } from '../transitions';
 ---
 
-<Base title="Page not found">
+<Base
+  title="Page not found"
+  description="The page you were looking for does not exist."
+  noindex
+>
   <div class="container not-found">
     <div class="page-body padded" transition:animate={crossDissolve}>
       <Breadcrumb current="Not Found" />
