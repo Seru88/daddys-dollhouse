@@ -1,10 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 import SiteNav from '../components/SiteNav.astro';
 import RuleIcon from '../components/RuleIcon.astro';
 import HeroImg from '../components/HeroImg.astro';
-import { crossDissolve } from '../transitions';
+import { growFade } from '../transitions';
 import heroRules from '../images/hero_community_rules.webp';
 ---
 
@@ -15,9 +14,8 @@ import heroRules from '../images/hero_community_rules.webp';
   <div class="container">
     <HeroImg src={heroRules} alt="" />
     <SiteNav />
-    <div class="page-body" transition:animate={crossDissolve}>
-      <Breadcrumb current="Community Rules" />
-      <h1 class="page-title" id="page-title" tabindex="-1">COMMUNITY RULES</h1>
+    <div class="page-body" transition:animate={growFade}>
+      <h1 class="page-title" id="page-title" tabindex="-1">Community Rules</h1>
       <hr class="divider" />
 
       <section class="section">
@@ -44,8 +42,10 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-1">
-          1. EVERYONE 18 OR OLDER IS WELCOME; DISCRIMINATION IS NOT ALLOWED!
+        <h2 class="section-title numbered" id="rule-1">
+          <span class="section-num">1.</span>{' '}<span class="section-text"
+            >Everyone 18 or older is welcome; discrimination is not allowed!</span
+          >
         </h2>
         <p>
           Do not discriminate against anyone in the community! Difference of
@@ -69,8 +69,10 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-2">
-          2. POSTS SHOULD FOCUS ON GIANT MEN AND/OR TINY WOMEN.
+        <h2 class="section-title numbered" id="rule-2">
+          <span class="section-num">2.</span>{' '}<span class="section-text"
+            >Posts should focus on Giant men and/or tiny women.</span
+          >
         </h2>
         <p>
           Being a diverse community, discussions will be more lenient on this
@@ -119,7 +121,11 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-3">3. ONLY SHARE “LEGAL” CONTENT</h2>
+        <h2 class="section-title numbered" id="rule-3">
+          <span class="section-num">3.</span>{' '}<span class="section-text"
+            >Only share “legal” content</span
+          >
+        </h2>
         <p>
           To protect this community for the long term, let’s follow some simple
           content sharing rules!
@@ -203,8 +209,10 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-4">
-          4. RESPECT EACH OTHER'S PRIVACY
+        <h2 class="section-title numbered" id="rule-4">
+          <span class="section-num">4.</span>{' '}<span class="section-text"
+            >Respect each other's privacy</span
+          >
         </h2>
         <p>
           Aside from your own personal details, no posting personal details of
@@ -217,8 +225,10 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-5">
-          5. BE MINDFUL OF PEOPLE’S PREFERENCES AND TIME
+        <h2 class="section-title numbered" id="rule-5">
+          <span class="section-num">5.</span>{' '}<span class="section-text"
+            >Be mindful of people’s preferences and time</span
+          >
         </h2>
         <p>
           Take the time to read someone’s size preference and/or gender
@@ -232,8 +242,10 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-6">
-          6. DO YOUR PART IN THE COMMUNITY - SPEAK UP TO KEEP THE PEACE!
+        <h2 class="section-title numbered" id="rule-6">
+          <span class="section-num">6.</span>{' '}<span class="section-text"
+            >Do your part in the community - speak up to keep the peace!</span
+          >
         </h2>
         <p>
           If another user is making you uncomfortable, please clearly and
@@ -255,7 +267,11 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-7">7. DON’T SHAME</h2>
+        <h2 class="section-title numbered" id="rule-7">
+          <span class="section-num">7.</span>{' '}<span class="section-text"
+            >Don’t shame</span
+          >
+        </h2>
         <p>
           Celebrate our unique culture! If you don’t like something, do not
           leave hurtful, awkward or otherwise insensitive comments. If you have
@@ -271,8 +287,10 @@ import heroRules from '../images/hero_community_rules.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="rule-8">
-          8. TREAT THE FORUM WITH LOVE AND RESPECT
+        <h2 class="section-title numbered" id="rule-8">
+          <span class="section-num">8.</span>{' '}<span class="section-text"
+            >Treat the forum with love and respect</span
+          >
         </h2>
         <p>Do not spam and do not derail threads.</p>
         <p>
