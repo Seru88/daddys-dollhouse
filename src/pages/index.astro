@@ -4,14 +4,13 @@ import HeroImg from '../components/HeroImg.astro';
 import BorderedBox from '../components/BorderedBox.astro';
 import BorderedBoxOrnament from '../components/BorderedBoxOrnament.astro';
 import BorderedButton from '../components/BorderedButton.astro';
-import Copyright from '../components/Copyright.astro';
 import { growFade } from '../transitions';
 import heroHome from '../images/hero_home.png';
 ---
 
 <Base title="Home">
   <div class="container">
-    <HeroImg src={heroHome} alt="home page hero" />
+    <HeroImg src={heroHome} alt="" />
     <div class="page-body padded" transition:animate={growFade}>
       <h1 class="page-title plain" id="page-title" tabindex="-1">
         WELCOME TO <span class="text-primary">DADDY'S DOLLHOUSE</span>
@@ -28,7 +27,6 @@ import heroHome from '../images/hero_home.png';
             </p>
             <BorderedButton
               href="https://forum.daddysdollhouse.org"
-              title="Enter Forum"
               ornamentPosition="left"
               class="btn-enter"
             >
@@ -41,28 +39,26 @@ import heroHome from '../images/hero_home.png';
             <BorderedBoxOrnament />
             <div class="button-stack">
               <BorderedButton
-                href="/about"
-                title="About Us"
+                href="/about/"
                 ornamentPosition="left"
                 class="btn-route"
               >
                 About Us
               </BorderedButton>
               <BorderedButton
-                href="/rules"
-                title="Community Rules"
+                href="/rules/"
                 ornamentPosition="right"
                 class="btn-route"
               >
                 Community Rules
               </BorderedButton>
               <BorderedButton
-                title="Helpful links"
                 ornamentPosition="left"
                 class="btn-route"
                 disabled
               >
                 Helpful Links
+                <span class="btn-note">Coming soon</span>
               </BorderedButton>
             </div>
           </BorderedBox>
@@ -72,24 +68,22 @@ import heroHome from '../images/hero_home.png';
             <BorderedBoxOrnament />
             <div class="button-stack">
               <BorderedButton
-                href="/resources"
-                title="Kink Resources"
+                href="/resources/"
                 ornamentPosition="left"
                 class="btn-route"
               >
                 Kink Resources
               </BorderedButton>
               <BorderedButton
-                title="Get Involved"
                 ornamentPosition="right"
                 class="btn-route"
                 disabled
               >
                 Get Involved
+                <span class="btn-note">Coming soon</span>
               </BorderedButton>
               <BorderedButton
-                href="/dictionary"
-                title="Dictionary"
+                href="/dictionary/"
                 ornamentPosition="left"
                 class="btn-route"
               >
@@ -100,6 +94,5 @@ import heroHome from '../images/hero_home.png';
         </div>
       </div>
     </div>
-    <Copyright />
   </div>
 </Base>

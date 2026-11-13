@@ -23,7 +23,13 @@ const ornament = ornamentPosition === 'left' ? ornamentLeft : ornamentRight;
 const ornamentSide =
   ornamentPosition === 'left' ? 'btn-ornament-left' : 'btn-ornament-right';
 const Tag = url ? 'a' : 'button';
-const attrs = url ? { href: url } : { type: 'button', disabled };
+const attrs = url
+  ? {
+      href: url,
+      'aria-disabled': disabled ? 'true' : undefined,
+      tabindex: disabled ? -1 : undefined,
+    }
+  : { type: 'button', disabled };
 ---
 
 <Tag class={`btn ${className}`} title={title} {...attrs}>

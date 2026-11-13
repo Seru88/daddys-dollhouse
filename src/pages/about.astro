@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import Copyright from '../components/Copyright.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
 import heroAbout from '../images/hero_about.png';
@@ -9,7 +8,7 @@ import heroAbout from '../images/hero_about.png';
 
 <Base title="About Us">
   <div class="container">
-    <HeroImg src={heroAbout} alt="about us banner" />
+    <HeroImg src={heroAbout} alt="" />
     <div class="page-body" transition:animate={crossDissolve}>
       <Breadcrumb current="About Us" />
       <h1 class="page-title" id="page-title" tabindex="-1">ABOUT US</h1>
@@ -27,9 +26,7 @@ import heroAbout from '../images/hero_about.png';
       <hr class="divider" />
 
       <section class="section">
-        <h2 class="section-title">
-          <b>WHEN DID THIS COMMUNITY BEGIN?</b>
-        </h2>
+        <h2 class="section-title">WHEN DID THIS COMMUNITY BEGIN?</h2>
         <p>
           While fans of Giant men and tiny women have more than likely existed
           always, the community in earnest began to organize in the 90’s and
@@ -45,9 +42,7 @@ import heroAbout from '../images/hero_about.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">
-          <b>HOW WILL THIS COMMUNITY BE DIFFERENT?</b>
-        </h2>
+        <h2 class="section-title">HOW WILL THIS COMMUNITY BE DIFFERENT?</h2>
         <p>
           We hope to achieve our goal of reuniting the community by being
           respectful, inclusive and above all empowering! A community isn’t
@@ -73,10 +68,8 @@ import heroAbout from '../images/hero_about.png';
       <hr class="divider" />
       <section class="section">
         <h2 class="section-title">
-          <b>
-            CAN I REALLY DISCUSS OR SHARE CONTENT ABOUT NON-CONSENSUAL, CRUEL,
-            HUMILIATING, ETC TYPE FANTASIES AT DADDY’S DOLLHOUSE?
-          </b>
+          CAN I REALLY DISCUSS OR SHARE CONTENT ABOUT NON-CONSENSUAL, CRUEL,
+          HUMILIATING, ETC TYPE FANTASIES AT DADDY’S DOLLHOUSE?
         </h2>
         <p>
           Yes! Our forum is focused on FANTASY. Last we checked, fantasy is not
@@ -113,10 +106,7 @@ import heroAbout from '../images/hero_about.png';
       <hr class="divider" />
       <section class="section">
         <h2 class="section-title">
-          <b>
-            WHY DOES THIS SITE USE THE ACRONYM “M/f” VERSUS THE TRADITIONAL
-            “SW”?
-          </b>
+          WHY DOES THIS SITE USE THE ACRONYM “M/f” VERSUS THE TRADITIONAL “SW”?
         </h2>
         <p>
           While both <em>M/f</em> (Giant male / tiny female) and <em>SW</em>{
@@ -125,8 +115,9 @@ import heroAbout from '../images/hero_about.png';
           (shrunken woman) imply similarities in context in the broader size kink
           community, <em>SW</em> is a term that only focuses on the female subject
           and is intended to entice a mostly male audience. To be more{' '}
-          <u>inclusive</u> to our female members, we decided to go with a term that
-          didn’t just fetishize the women, but the men as well. Fair is fair!
+          <strong>inclusive</strong> to our female members, we decided to go with
+          a term that didn’t just fetishize the women, but the men as well. Fair is
+          fair!
         </p>
         <p>
           While it is totally acceptable to call a tiny woman an <em>SW</em>{
@@ -134,20 +125,18 @@ import heroAbout from '../images/hero_about.png';
           }
           on this board, or refer to yourself as an <em>SW</em> fan, when discussing
           Daddy’s Dollhouse as a whole, please try and refer to us as an{' '}
-          <u>
+          <strong>
             <em>M/f</em> community
-          </u>{' '}
+          </strong>{' '}
           and not an{' '}
-          <u>
+          <strong>
             <em>SW</em> community
-          </u>
+          </strong>
         </p>
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">
-          <b>WHO CREATED THIS WEBSITE?</b>
-        </h2>
+        <h2 class="section-title">WHO CREATED THIS WEBSITE?</h2>
         <p>
           This site was constructed in early 2021 by kinky duo{' '}
           <a href="https://forum.daddysdollhouse.org/user/jitensha">Jitensha</a
@@ -174,15 +163,14 @@ import heroAbout from '../images/hero_about.png';
         </p>
         <p>
           If you’re able to, and would like to support our kinky-duo-developers,
-          you can send tips{' '}
-          <a href="https://www.paypal.com/paypalme/jitensha" target="_blank"
-            >here</a
+          you can{' '}
+          <a href="https://www.paypal.com/paypalme/jitensha"
+            >send tips via PayPal</a
           >. Thank you! We very much appreciate the encouragement and support
           from our fellow kinksters!
         </p>
       </section>
       <hr class="divider" />
     </div>
-    <Copyright />
   </div>
 </Base>

@@ -1,16 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import Copyright from '../components/Copyright.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
 import heroDictionary from '../images/hero_kink_dictionairy.png';
 import tagsInfo from '../tags.json';
+
+const tags = tagsInfo.tags;
 ---
 
 <Base title="Dictionary">
   <div class="container">
-    <HeroImg src={heroDictionary} alt="about us banner" />
+    <HeroImg src={heroDictionary} alt="" />
     <div class="page-body" transition:animate={crossDissolve}>
       <Breadcrumb current="Dictionary" />
       <h1 class="page-title" id="page-title" tabindex="-1">DICTIONARY</h1>
@@ -23,26 +24,88 @@ import tagsInfo from '../tags.json';
         </p>
       </section>
       <hr class="divider" />
-      <div class="grid items-center">
-        {
-          tagsInfo.tags.map(tag => (
-            <>
-              <div class="col-md-2">
-                <a href={tag.link}>
-                  <span class="tag-name">{tag.name}</span>
-                </a>
+      <section class="section" aria-labelledby="tag-heading">
+        <h2 class="section-title" id="tag-heading">Tag dictionary</h2>
+        <p class="tag-intro">
+          Every tag on the forum, with the definition we use and any alternative
+          lingo you might see in the wild.
+        </p>
+        <div class="tag-filter">
+          <label class="tag-filter-label" for="tag-filter">Filter tags</label>
+          <input
+            class="tag-filter-input"
+            id="tag-filter"
+            type="search"
+            placeholder="Search a tag or definition…"
+            autocomplete="off"
+            aria-describedby="tag-filter-status"
+          />
+          <p class="tag-filter-status" id="tag-filter-status" role="status">
+            {tags.length} tags
+          </p>
+        </div>
+        <dl class="tag-list">
+          {
+            tags.map(tag => (
+              <div class="tag-entry">
+                <dt>
+                  <a href={tag.link}>
+                    <span class="tag-name">{tag.name.replace(/:$/, '')}</span>
+                    <span class="tag-colon" aria-hidden="true">
+                      :
+                    </span>
+                  </a>
+                </dt>
+                <dd>
+                  <span class="rule-primary">{tag.definition}</span>
+                  {tag.alt !== '' && (
+                    <span class="rule-secondary">{tag.alt}</span>
+                  )}
+                </dd>
               </div>
-              <div class="col-md-9">
-                <span class="rule-primary">{tag.definition}</span>
-                {tag.alt !== '' && (
-                  <span class="rule-secondary">{tag.alt}</span>
-                )}
-              </div>
-            </>
-          ))
-        }
-      </div>
+            ))
+          }
+        </dl>
+        <p class="tag-empty" id="tag-empty" hidden>
+          No tags match that search.
+        </p>
+      </section>
     </div>
-    <Copyright />
   </div>
 </Base>
+
+<script>
+  const setupTagFilter = () => {
+    const input = document.querySelector<HTMLInputElement>('#tag-filter');
+    if (!input || input.dataset.ready === 'true') return;
+    input.dataset.ready = 'true';
+
+    const entries = Array.from(
+      document.querySelectorAll<HTMLElement>('.tag-entry'),
+    );
+    const status = document.querySelector<HTMLElement>('#tag-filter-status');
+    const empty = document.querySelector<HTMLElement>('#tag-empty');
+
+    const update = () => {
+      const query = input.value.trim().toLowerCase();
+      let visible = 0;
+
+      for (const entry of entries) {
+        const matches =
+          query === '' || entry.textContent.toLowerCase().includes(query);
+        entry.hidden = !matches;
+        if (matches) visible += 1;
+      }
+
+      if (status) {
+        status.textContent = `${visible} of ${entries.length} tags`;
+      }
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    input.addEventListener('input', update);
+  };
+
+  setupTagFilter();
+  document.addEventListener('astro:page-load', setupTagFilter);
+</script>

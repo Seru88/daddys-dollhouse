@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import Copyright from '../components/Copyright.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
 import heroResources from '../images/hero_kink_resources.png';
@@ -9,8 +8,8 @@ import heroResources from '../images/hero_kink_resources.png';
 
 <Base title="Kink Resources">
   <div class="container">
-    <HeroImg src={heroResources} alt="kink resources banner" />
-    <div transition:animate={crossDissolve}>
+    <HeroImg src={heroResources} alt="" />
+    <div class="page-body" transition:animate={crossDissolve}>
       <Breadcrumb current="Kink Resources" />
       <h1 class="page-title" id="page-title" tabindex="-1">KINK RESOURCES</h1>
       <hr class="divider" />
@@ -21,18 +20,40 @@ import heroResources from '../images/hero_kink_resources.png';
           specifically on size kink, we hope the catered guide below will help
           you along your personal journey!
         </p>
+        <nav class="page-toc" aria-labelledby="toc-heading">
+          <h2 class="page-toc-title" id="toc-heading">On this page</h2>
+          <ol>
+            <li><a href="#step-1">Don’t beat yourself up</a></li>
+            <li><a href="#step-2">Find a supportive outlet</a></li>
+            <li><a href="#step-3">Work towards self-acceptance</a></li>
+            <li><a href="#step-4">Consider who you share with</a></li>
+            <li><a href="#step-5">Be brave</a></li>
+            <li><a href="#step-6">Own your kink</a></li>
+            <li><a href="#step-7">Be patient</a></li>
+            <li><a href="#step-8">Share how your kink affects you</a></li>
+            <li><a href="#step-9">Build a foundation for sizeplay</a></li>
+            <li><a href="#step-10">Consider BDSM principles</a></li>
+            <li><a href="#step-11">Be mindful of your words</a></li>
+            <li>
+              <a href="#step-12">Help your partner find their own voice</a>
+            </li>
+            <li>
+              <a href="#step-13">Be the best Giant and/or tiny you can be</a>
+            </li>
+            <li><a href="#step-14">Embrace your creativity</a></li>
+          </ol>
+        </nav>
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>BEFORE WE DIVE IN...</b></h2>
+        <h2 class="section-title" id="before-we-dive-in">
+          BEFORE WE DIVE IN...
+        </h2>
         <p>
           Hello and welcome to Daddy’s Dollhouse Size-kink Guide, written by me,{
             ' '
           }
-          <a
-            href="https://forum.daddysdollhouse.org/user/jitensha"
-            target="_blank"
-          >
+          <a href="https://forum.daddysdollhouse.org/user/jitensha">
             Jitensha
           </a>
           ! I want to start this guide off by being transparent with those reading
@@ -54,7 +75,7 @@ import heroResources from '../images/hero_kink_resources.png';
         </p>
         <p>
           While I’ve written this guide from my perspective as someone in a
-          monogamous hetero relationship, and as a tiny woman, thus ocassionaly
+          monogamous hetero relationship, and as a tiny woman, thus occasionally
           using pronouns that reflect my experience as someone into M/f, this
           information should be generally helpful for anyone with a size kink,
           or even people interested in other unrelated kinks - Please enjoy the
@@ -64,7 +85,7 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>1. DON’T BEAT YOURSELF UP</b></h2>
+        <h2 class="section-title" id="step-1">1. DON’T BEAT YOURSELF UP</h2>
         <p>
           It’s easy for someone with a size kink to think of themselves as
           sexually damaged goods for having to live out their lifetime with such
@@ -96,8 +117,8 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">
-          <b>2. FIND A SUPPORTIVE OUTLET THAT WORKS FOR YOU</b>
+        <h2 class="section-title" id="step-2">
+          2. FIND A SUPPORTIVE OUTLET THAT WORKS FOR YOU
         </h2>
         <p>
           One of the first really challenging hurdles for any person with a
@@ -113,7 +134,7 @@ import heroResources from '../images/hero_kink_resources.png';
           expectations are not there. A supportive community will listen without
           judgement and offer support. Without those barriers, you can express
           your thoughts freely and{' '}
-          <u>shame can finally loosen its grip on you.</u>
+          <strong>shame can finally loosen its grip on you.</strong>
         </p>
         <p>
           Joining Daddy’s Dollhouse is already a positive first step - plus it’s
@@ -123,7 +144,7 @@ import heroResources from '../images/hero_kink_resources.png';
           specifically with individuals like ourselves and can help you manage
           and better understand your mind, sexually and romantically. My husband
           and I both found our kink-aware therapists at{' '}
-          <a href="http://www.therapyden.com" target="_blank"> Therapy Den </a>
+          <a href="http://www.therapyden.com"> Therapy Den </a>
           , but feel free to google the term “Kink-aware therapist” as there are lots
           of options nowadays!
         </p>
@@ -155,7 +176,9 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>3. WORK TOWARDS SELF-ACCEPTANCE</b></h2>
+        <h2 class="section-title" id="step-3">
+          3. WORK TOWARDS SELF-ACCEPTANCE
+        </h2>
         <p>
           Finding pride in something you’ve promised to never tell a soul about
           can seem like an impossibility. Sharing your kink will always be up to
@@ -192,20 +215,22 @@ import heroResources from '../images/hero_kink_resources.png';
         <p>
           Luckily, our broader community has a yearly in-person convention
           called{' '}
-          <a href="https://www.sizecon.com/" target="_blank"> SizeCon </a>{' '}
+          <a href="https://www.sizecon.com/"> SizeCon </a>{' '}
           which is an amazing and extremely validating experience that celebrates
           size kinksters and provides educational and entertaining workshops and panels
           geared towards people like us! Although covid has stalled any plans for
           a 2021 convention, SizeCon is hosting virtual events in the interim - so
           check it out! Informal meetups have also moved virtually and can be found
           or organized on sites like ours or other kink related sites like{' '}
-          <a href="https://fetlife.com/" target="_blank"> Fetlife </a>
+          <a href="https://fetlife.com/"> Fetlife </a>
           .
         </p>
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>4. CONSIDER WHO YOU SHARE WITH</b></h2>
+        <h2 class="section-title" id="step-4">
+          4. CONSIDER WHO YOU SHARE WITH
+        </h2>
         <p>
           One way to find peace and validation is telling others close to you
           about your kink. Having others you know you can trust to be 100%
@@ -234,18 +259,19 @@ import heroResources from '../images/hero_kink_resources.png';
         </p>
         <p>
           I challenge that mindset! If you feel like your partner truly cares
-          about you, then <u>don’t make that judgement call for them</u>. It’s
-          unfair to you, and it’s unfair for them. Every partner deserves the
-          truth, and seeing as that sex is an activity that includes them too,
-          you should give them the benefit of the doubt. Who knows, maybe they
-          want to get involved! One of the most popular panels at SizeCon is a
-          discussion on relationships with a panel full of all types of couples.
-          Many of the folks introduced to the community are often happy to be
-          able to share or play along with something that is unique and intimate
-          to them and their partner. Some even find they have kinky,
-          power-dynamic based desires as well, but maybe didn’t see the
-          connection because thematically, their kink is different from yours.
-          We can work with this!
+          about you, then <strong
+            >don’t make that judgement call for them</strong
+          >. It’s unfair to you, and it’s unfair for them. Every partner
+          deserves the truth, and seeing as that sex is an activity that
+          includes them too, you should give them the benefit of the doubt. Who
+          knows, maybe they want to get involved! One of the most popular panels
+          at SizeCon is a discussion on relationships with a panel full of all
+          types of couples. Many of the folks introduced to the community are
+          often happy to be able to share or play along with something that is
+          unique and intimate to them and their partner. Some even find they
+          have kinky, power-dynamic based desires as well, but maybe didn’t see
+          the connection because thematically, their kink is different from
+          yours. We can work with this!
         </p>
         <div class="video-wrap">
           <iframe
@@ -260,7 +286,7 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>5. BE BRAVE</b></h2>
+        <h2 class="section-title" id="step-5">5. BE BRAVE</h2>
         <p>
           Now that you’ve decided to come out to your significant other, you’ll
           need to find your courage. Speak to any macrophile or microphile who’s
@@ -311,7 +337,7 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>6. OWN YOUR KINK</b></h2>
+        <h2 class="section-title" id="step-6">6. OWN YOUR KINK</h2>
         <p>
           Now that you’ve decided to come out, it’s time to actually own your
           kink. It doesn’t matter if you’ve hooked up with a kinky person or
@@ -351,7 +377,7 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>7. BE PATIENT</b></h2>
+        <h2 class="section-title" id="step-7">7. BE PATIENT</h2>
         <p>
           Having come out to them and now told them many of your fantasies, you
           may want to believe things might finally start to click. But
@@ -364,7 +390,7 @@ import heroResources from '../images/hero_kink_resources.png';
         <p>
           We must always remember that while we might have a complex universe in
           our minds that caters to our desires, our partner will have{' '}
-          <u>no insight</u>{' '}
+          <strong>no insight</strong>{' '}
           into our inner world, aside from what you decide to share with them. The
           less information you give them, the more they will rely on their own biases.
           Maybe that’s a cringy recreation from a character in a size related movie,
@@ -376,25 +402,21 @@ import heroResources from '../images/hero_kink_resources.png';
         <p>
           Sometimes doing that verbally can be agonizing, but trust me when I
           say -{' '}
-          <u>do not</u> encourage your partner to google on their own due to your
-          lack of sharing. They might be scared or unsure of what they find! Take
-          control on how you expose them to your fetish and consider writing out texts,
-          snapchats, emails or using other text-based messaging apps to share fantasies.
-          Sharing artwork, videos, stories or other media is always an excellent way
-          to show your partner what you like as well. Make sure to point out the parts
-          that really make you excited! The Xconfessions app is another great resource
-          created by a Sex Therapist, available for{' '}
+          <strong>do not</strong> encourage your partner to google on their own due
+          to your lack of sharing. They might be scared or unsure of what they find!
+          Take control on how you expose them to your fetish and consider writing
+          out texts, snapchats, emails or using other text-based messaging apps to
+          share fantasies. Sharing artwork, videos, stories or other media is always
+          an excellent way to show your partner what you like as well. Make sure to
+          point out the parts that really make you excited! The Xconfessions app is
+          another great resource created by a Sex Therapist, available for{' '}
           <a
             href="https://play.google.com/store/apps/details?id=com.gorillaarm.android.xconfessions&hl=en_US&gl=US"
-            target="_blank"
           >
             Android
           </a>{' '}
           and{' '}
-          <a
-            href="https://apps.apple.com/us/app/xconfessions/id1318649256"
-            target="_blank"
-          >
+          <a href="https://apps.apple.com/us/app/xconfessions/id1318649256">
             Apple
           </a>{' '}
           devices. It works similar to Tinder, wherein you and your partner swipe
@@ -414,8 +436,8 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">
-          <b>8. CONSIDER SHARING HOW YOUR KINK AFFECTS YOU</b>
+        <h2 class="section-title" id="step-8">
+          8. CONSIDER SHARING HOW YOUR KINK AFFECTS YOU
         </h2>
         <p>
           As many of you know, our kink can affect us in many ways, even in ways
@@ -431,7 +453,7 @@ import heroResources from '../images/hero_kink_resources.png';
           great way for me to find emotional and physical support with my Giant
           Dominant, to help me come down from the adrenaline rush I’d just
           experienced. For most couples who engage in power-play,{' '}
-          <u>after care is a must!</u>
+          <strong>after care is a must!</strong>
         </p>
         <p>
           Another consideration for women specifically is to discuss your
@@ -452,7 +474,6 @@ import heroResources from '../images/hero_kink_resources.png';
           years, and I couldn’t be happier. Here’s a nice{' '}
           <a
             href="https://kinkyevents.co.uk/dom-sub-relationships-the-ultimate-guide-for-beginners/"
-            target="_blank"
           >
             beginners guide
           </a>{' '}
@@ -492,7 +513,9 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>9. BUILD A FOUNDATION FOR SIZEPLAY</b></h2>
+        <h2 class="section-title" id="step-9">
+          9. BUILD A FOUNDATION FOR SIZEPLAY
+        </h2>
         <p>
           Now that your partner has somewhat of an idea of what turns you on,
           you may want to look into how others structure their play. After all,
@@ -523,13 +546,13 @@ import heroResources from '../images/hero_kink_resources.png';
           to take advantage of the tiny person. They don’t even have to be nude,
           heck, they may not even need to notice the tiny person at all! Coming
           to terms with and being introspective of your power-play desires can
-          help your sex-game considerbly! Who knows, BDSM might be for you after
-          all.
+          help your sex-game considerably! Who knows, BDSM might be for you
+          after all.
         </p>
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>10. CONSIDER BDSM PRINCIPLES</b></h2>
+        <h2 class="section-title" id="step-10">10. CONSIDER BDSM PRINCIPLES</h2>
         <p>
           As mentioned earlier, the BDSM community is a great source of
           information on how to play out your fantasies in reality. These
@@ -537,29 +560,24 @@ import heroResources from '../images/hero_kink_resources.png';
           involve actual intercourse. While I encourage you to do your own
           research, before engaging in kink-play, I encourage you to follow the
           fundamental BDSM principle of{' '}
-          <a
-            href="https://en.wikipedia.org/wiki/Safe,_sane_and_consensual"
-            target="_blank"
-          >
+          <a href="https://en.wikipedia.org/wiki/Safe,_sane_and_consensual">
             Safe, Sane &amp; Consent
           </a>{' '}
           (SSC) explained below in 3 sections.
         </p>
-        <div class="gutter-bottom"></div>
         <ul class="rule-list">
           <li class="has-nested">
             <div class="rule-text">
-              <span class="rule-primary rule-heading"><b>⦿ Be Safe!</b></span>
+              <span class="rule-primary rule-heading"
+                ><strong>Be Safe!</strong></span
+              >
             </div>
             <ul class="rule-list">
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
-                    <a
-                      href="https://en.wikipedia.org/wiki/Safeword"
-                      target="_blank"
-                    >
+                    <a href="https://en.wikipedia.org/wiki/Safeword">
                       Safe words
                     </a>{' '}
                     or signals should be decided on beforehand.
@@ -567,7 +585,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary"
                     >Discuss both of your physical and mental limitations.</span
@@ -575,7 +593,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     Discuss and practice acts before you start a scene. Doing
@@ -587,7 +605,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     Be risk aware of play, especially if it could cause injury
@@ -596,7 +614,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     Be prepared for an emergency. For example, I very much enjoy
@@ -610,11 +628,13 @@ import heroResources from '../images/hero_kink_resources.png';
           </li>
           <li class="has-nested">
             <div class="rule-text">
-              <span class="rule-primary rule-heading"><b>⦿ Be Sane!</b></span>
+              <span class="rule-primary rule-heading"
+                ><strong>Be Sane!</strong></span
+              >
             </div>
             <ul class="rule-list">
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     You are not to practice any scene that may cause harm while
@@ -623,7 +643,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     BDSM should not be used as a way to get revenge or vent
@@ -632,7 +652,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     Dominants should provide after-care to their submissives to
@@ -645,12 +665,12 @@ import heroResources from '../images/hero_kink_resources.png';
           <li class="has-nested">
             <div class="rule-text">
               <span class="rule-primary rule-heading"
-                ><b>⦿ Be Consensual!</b></span
+                ><strong>Be Consensual!</strong></span
               >
             </div>
             <ul class="rule-list">
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     Your scene has been discussed and negotiated before play
@@ -659,7 +679,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     Tell your partner if they’re approaching your limits by
@@ -668,7 +688,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     Be honest! Misleading your partner is a breach of consent
@@ -678,7 +698,7 @@ import heroResources from '../images/hero_kink_resources.png';
                 </div>
               </li>
               <li class="nested">
-                <span class="rule-icon">&gt;</span>
+                <span class="rule-icon" aria-hidden="true">&gt;</span>
                 <div class="rule-text">
                   <span class="rule-primary">
                     A submissive person may put themselves in a vulnerable
@@ -688,7 +708,7 @@ import heroResources from '../images/hero_kink_resources.png';
                     abusing your power or neglecting your agreement. She is in{
                       ' '
                     }
-                    <u>your</u> care!
+                    <strong>your</strong> care!
                   </span>
                 </div>
               </li>
@@ -698,7 +718,7 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title"><b>11. BE MINDFUL OF YOUR WORDS</b></h2>
+        <h2 class="section-title" id="step-11">11. BE MINDFUL OF YOUR WORDS</h2>
         <p>
           Remember, as you both begin to engage in structured play, let them
           know how they’re doing! As mentioned earlier, your partner is playing
@@ -724,17 +744,17 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">
-          <b>12. HELP YOUR PARTNER FIND THEIR OWN VOICE</b>
+        <h2 class="section-title" id="step-12">
+          12. HELP YOUR PARTNER FIND THEIR OWN VOICE
         </h2>
         <p>
-          Building confidence is <u>extremely important!</u> If your partner has decided
-          that they want to explore a kinky lifestyle with you, chances are that they
-          might have a little kinkiness inside them too! And heck, maybe without you
-          knowing, that’s what attracted you to them in the first place! It’s easy
-          to assume that your partner is not kinky because they didn’t approach you
-          with their kinky fantasies, or you feel as if their fantasies are more mainstream
-          than your own.
+          Building confidence is <strong>extremely important!</strong> If your partner
+          has decided that they want to explore a kinky lifestyle with you, chances
+          are that they might have a little kinkiness inside them too! And heck, maybe
+          without you knowing, that’s what attracted you to them in the first place!
+          It’s easy to assume that your partner is not kinky because they didn’t approach
+          you with their kinky fantasies, or you feel as if their fantasies are more
+          mainstream than your own.
         </p>
         <p>
           At the start of my D/s relationship, I often felt that because my
@@ -785,8 +805,8 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">
-          <b>13. TRY AND BE THE BEST GIANT AND/OR TINY YOU CAN BE!</b>
+        <h2 class="section-title" id="step-13">
+          13. TRY AND BE THE BEST GIANT AND/OR TINY YOU CAN BE!
         </h2>
         <p>
           As mentioned before, it’s important to be open to your partner trying
@@ -814,24 +834,39 @@ import heroResources from '../images/hero_kink_resources.png';
           learning your partner’s language of love can help with figuring out
           each other's romantic expectations. It’s also great for bonding!
         </p>
-        <img
-          class="img-fluid"
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/love-languages-static-1560977777.jpg"
-          alt="five languages of love"
-          width="100%"
-          height="auto"
-        />
+        <ul class="love-languages">
+          <li>
+            <strong>Words of affirmation</strong>
+            <span>Compliments, encouragement and “I appreciate you”.</span>
+          </li>
+          <li>
+            <strong>Quality time</strong>
+            <span>Undivided attention, shared activities and presence.</span>
+          </li>
+          <li>
+            <strong>Receiving gifts</strong>
+            <span>Thoughtful tokens that show you were being thought of.</span>
+          </li>
+          <li>
+            <strong>Acts of service</strong>
+            <span>Helpful actions that lighten the load.</span>
+          </li>
+          <li>
+            <strong>Physical touch</strong>
+            <span>Affectionate contact, closeness and comfort.</span>
+          </li>
+        </ul>
         <p>
           Most of us may consider all 5 of these points very important to us,
           but it’s natural that we may have preferences. Luckily for my husband
-          and I, we both share <u>Quality Time</u> as our favored language of love.
-          And it’s true, for the past 15+ years I can scarcely think of a day I haven’t
-          spent with him. Many of our friends and family even joke we’re glued at
-          the hip. Unfortunately for me, my idea of quality time includes things like
-          talking, touching, doing an activity together, etc. My husband however is
-          content with me just being near him. So, make sure to explain what your
-          needs are when reviewing this list above with your partner, as this list
-          can be very vague.
+          and I, we both share <strong>Quality Time</strong> as our favored language
+          of love. And it’s true, for the past 15+ years I can scarcely think of a
+          day I haven’t spent with him. Many of our friends and family even joke we’re
+          glued at the hip. Unfortunately for me, my idea of quality time includes
+          things like talking, touching, doing an activity together, etc. My husband
+          however is content with me just being near him. So, make sure to explain
+          what your needs are when reviewing this list above with your partner, as
+          this list can be very vague.
         </p>
         <p>
           You may not have love languages that line up, and that’s OK too! My
@@ -868,8 +903,8 @@ import heroResources from '../images/hero_kink_resources.png';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">
-          <b>14. EMBRACE YOUR CREATIVITY TO LIVE OUT THE FANTASY</b>
+        <h2 class="section-title" id="step-14">
+          14. EMBRACE YOUR CREATIVITY TO LIVE OUT THE FANTASY
         </h2>
         <p>
           While our fantasies don’t live in reality, there are many ways couples
@@ -877,7 +912,7 @@ import heroResources from '../images/hero_kink_resources.png';
           not work for everyone, but hopefully they’ll give you the inspiration
           needed to find something that works for you and your partner!
         </p>
-        <h2 class="section-title"><b>⦿ Using Perspective</b></h2>
+        <h3 class="section-title subsection-title">Using Perspective</h3>
         <p class="nested">
           One of the easiest types of sizeplay to master is using perspective to
           your benefit. While having a taller partner might make things a little
@@ -897,9 +932,7 @@ import heroResources from '../images/hero_kink_resources.png';
           Another example of using perspective, is one of my favorites my
           husband utilizes, which is to imitate growth. To initiate a short
           scene between us, he may without warning, corner me in a{' '}
-          <a href="https://en.wikipedia.org/wiki/Kabedon" target="_blank">
-            kabedon
-          </a>
+          <a href="https://en.wikipedia.org/wiki/Kabedon"> kabedon </a>
           -like style, both of his hands on the wall behind me, as he begins to tiptoe
           slowly, looming greedily above me, appearing as if he’s growing! I often
           instinctually ‘shrink’ in response from the intimidation, sliding my back
@@ -917,9 +950,9 @@ import heroResources from '../images/hero_kink_resources.png';
           fight back and happy to oblige - it’s quite the fun feeling for a
           submissive!
         </p>
-        <h2 class="section-title">
-          <b>⦿ Using Sex-Friendly P.O.V. (Point-of-View)</b>
-        </h2>
+        <h3 class="section-title subsection-title">
+          Using Sex-Friendly P.O.V. (Point-of-View)
+        </h3>
         <p class="nested">
           While sexual scenes can easily be played without intercourse, I get a
           lot of questions from other size kinksters eager to learn about how
@@ -965,7 +998,7 @@ import heroResources from '../images/hero_kink_resources.png';
         <p class="nested">
           Last but not least are POVs that may need extra research and practice
           before performing. Having a Dominant on top during sex can help
-          enhance his strength by letting his weight and gravity imobilize his
+          enhance his strength by letting his weight and gravity immobilize his
           submissive. Using POV, a Giant can easily roleplay crushing a tiny by
           choking her or pinning her down with his arms to provide the pressure
           to fool her brain. This can also be done with facesitting techniques
@@ -979,7 +1012,7 @@ import heroResources from '../images/hero_kink_resources.png';
           they cannot see their submissive. I highly recommend any Dominant
           engaging in breathe play to consider learning CPR.
         </p>
-        <h2 class="section-title"><b>⦿ Using Clothing</b></h2>
+        <h3 class="section-title subsection-title">Using Clothing</h3>
         <p class="nested">
           Clothing is another fun way to assert dominance or set a size scene.
           Many Giants for example will utilize oversized clothing to make their
@@ -1001,7 +1034,7 @@ import heroResources from '../images/hero_kink_resources.png';
           visually pleasing for him as well as following through on a task he’s
           assigned me.
         </p>
-        <h2 class="section-title"><b>⦿ Using Your Body</b></h2>
+        <h3 class="section-title subsection-title">Using Your Body</h3>
         <p class="nested">
           Body worship is commonplace in kinky play and especially so for those
           with a size fetish. And while I could argue this may be more
@@ -1023,7 +1056,7 @@ import heroResources from '../images/hero_kink_resources.png';
           to their Dominant to not be treated as an equal person in polite
           society, which can be an arousing feeling for many submissives.
         </p>
-        <h2 class="section-title"><b>⦿ Using Smell</b></h2>
+        <h3 class="section-title subsection-title">Using Smell</h3>
         <p class="nested">
           Being gigantic around a tiny, you would assume that smells might be
           more pronounced, so it's no surprise that bodily smells also play a
@@ -1039,7 +1072,7 @@ import heroResources from '../images/hero_kink_resources.png';
           around her face, but not stuffed in her mouth. She might be
           comfortable with you demanding that she smell your armpit, but not
           with being forced face-first by you into your armpit.{' '}
-          <u>ALWAYS</u>{' '}
+          <strong>ALWAYS</strong>{' '}
           discuss and negotiate your play beforehand.
         </p>
         <p class="nested">
@@ -1063,7 +1096,7 @@ import heroResources from '../images/hero_kink_resources.png';
           during sex, and using it as a tool for humiliation can be very
           effective at enhancing orgasms.
         </p>
-        <h2 class="section-title"><b>⦿ Using Touch</b></h2>
+        <h3 class="section-title subsection-title">Using Touch</h3>
         <p class="nested">
           Touch can also have a big impact on sexual arousal, and thankfully
           with some very basic tools, even touch from a normal sized partner can
@@ -1073,7 +1106,7 @@ import heroResources from '../images/hero_kink_resources.png';
           tremendously in spiriting them away into another reality.
         </p>
         <p class="nested">
-          My husband may use his foot or fist to represent his proding
+          My husband may use his foot or fist to represent his prodding
           fingertip. Submissives could use their fingers to ‘walk along’ their
           partner’s body to simulate a tiny taking a stroll. It can also be done
           with a hand job as well, and other light, one-handed touches. Being
@@ -1091,7 +1124,7 @@ import heroResources from '../images/hero_kink_resources.png';
           Dominant can feel like Giant tongue getting very personal. A gushing
           hot shower head can feel like a humiliating cum or piss bath.
         </p>
-        <h2 class="section-title"><b>⦿ Using Demands</b></h2>
+        <h3 class="section-title subsection-title">Using Demands</h3>
         <p class="nested">
           If your or your partner are into bondage or caging, the Dominant would
           naturally want to do it by force or authority. Unfortunately, because
@@ -1109,7 +1142,6 @@ import heroResources from '../images/hero_kink_resources.png';
           Another tool to help in defying reality is{' '}
           <a
             href="https://www.mindbodygreen.com/articles/erotic-hypnosis-guide"
-            target="_blank"
           >
             erotic hypnosis
           </a>
@@ -1124,9 +1156,9 @@ import heroResources from '../images/hero_kink_resources.png';
           I don’t have much experience with Hypno-kink myself, but I encourage you
           to do some research if this is a technique that piques your interest.
         </p>
-        <h2 class="section-title">
-          <b>⦿ Using Technology to Immerse Yourself</b>
-        </h2>
+        <h3 class="section-title subsection-title">
+          Using Technology to Immerse Yourself
+        </h3>
         <p class="nested">
           While technology might not be exactly where we need it to be to fulfil
           our deepest fantasies, there is some tech out there that can at least
@@ -1167,7 +1199,7 @@ import heroResources from '../images/hero_kink_resources.png';
         <p class="lead">Good luck, and may your naughty wishes come true!</p>
         <p class="align-center">- Jitensha</p>
       </section>
+      <p class="back-to-top"><a href="#top">Back to top</a></p>
     </div>
-    <Copyright />
   </div>
 </Base>
