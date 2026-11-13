@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import SiteNav from '../components/SiteNav.astro';
 import RuleIcon from '../components/RuleIcon.astro';
 import HeroImg from '../components/HeroImg.astro';
 import { crossDissolve } from '../transitions';
@@ -13,6 +14,7 @@ import heroRules from '../images/hero_community_rules.webp';
 >
   <div class="container">
     <HeroImg src={heroRules} alt="" />
+    <SiteNav />
     <div class="page-body" transition:animate={crossDissolve}>
       <Breadcrumb current="Community Rules" />
       <h1 class="page-title" id="page-title" tabindex="-1">COMMUNITY RULES</h1>

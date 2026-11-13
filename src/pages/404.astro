@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import SiteNav from '../components/SiteNav.astro';
 import BorderedButton from '../components/BorderedButton.astro';
 import { crossDissolve } from '../transitions';
 ---
@@ -11,6 +12,7 @@ import { crossDissolve } from '../transitions';
   noindex
 >
   <div class="container not-found">
+    <SiteNav />
     <div class="page-body padded" transition:animate={crossDissolve}>
       <Breadcrumb current="Not Found" />
       <h1 class="page-title" id="page-title" tabindex="-1">404: NOT FOUND</h1>

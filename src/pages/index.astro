@@ -1,8 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import HeroImg from '../components/HeroImg.astro';
-import BorderedBox from '../components/BorderedBox.astro';
-import BorderedBoxOrnament from '../components/BorderedBoxOrnament.astro';
+import SiteNav from '../components/SiteNav.astro';
 import BorderedButton from '../components/BorderedButton.astro';
 import { growFade } from '../transitions';
 import heroHome from '../images/hero_home.webp';
@@ -14,87 +13,26 @@ import heroHome from '../images/hero_home.webp';
 >
   <div class="container">
     <HeroImg src={heroHome} alt="" />
+    <SiteNav />
     <div class="page-body padded" transition:animate={growFade}>
       <h1 class="page-title plain" id="page-title" tabindex="-1">
         WELCOME TO <span class="text-primary">DADDY'S DOLLHOUSE</span>
       </h1>
-      <div class="grid centered home-grid">
-        <div class="col-lg-5 bottom-space home-center">
-          <div class="mid-box">
-            <p class="summary">
-              <span class="text-primary">DADDY'S DOLLHOUSE</span> IS AN{' '}
-              <span class="text-mature">ADULTS ONLY</span> FORUM DEDICATED TO THE
-              JUDGE-FREE DISCUSSION OF{' '}
-              <span class="text-primary">GIANT MEN</span> &amp;{' '}
-              <span class="text-primary">tiny women</span>
-            </p>
-            <BorderedButton
-              href="https://forum.daddysdollhouse.org"
-              ornamentPosition="left"
-              class="btn-enter"
-            >
-              Enter Forum
-            </BorderedButton>
-          </div>
-        </div>
-        <div class="col-lg-3 bottom-space home-left">
-          <BorderedBox minHeight={330}>
-            <BorderedBoxOrnament />
-            <div class="button-stack">
-              <BorderedButton
-                href="/about/"
-                ornamentPosition="left"
-                class="btn-route"
-              >
-                About Us
-              </BorderedButton>
-              <BorderedButton
-                href="/rules/"
-                ornamentPosition="right"
-                class="btn-route"
-              >
-                Community Rules
-              </BorderedButton>
-              <BorderedButton
-                ornamentPosition="left"
-                class="btn-route"
-                disabled
-              >
-                Helpful Links
-                <span class="btn-note">Coming soon</span>
-              </BorderedButton>
-            </div>
-          </BorderedBox>
-        </div>
-        <div class="col-lg-3 bottom-space home-right">
-          <BorderedBox minHeight={330}>
-            <BorderedBoxOrnament />
-            <div class="button-stack">
-              <BorderedButton
-                href="/resources/"
-                ornamentPosition="left"
-                class="btn-route"
-              >
-                Kink Resources
-              </BorderedButton>
-              <BorderedButton
-                ornamentPosition="right"
-                class="btn-route"
-                disabled
-              >
-                Get Involved
-                <span class="btn-note">Coming soon</span>
-              </BorderedButton>
-              <BorderedButton
-                href="/dictionary/"
-                ornamentPosition="left"
-                class="btn-route"
-              >
-                Dictionary
-              </BorderedButton>
-            </div>
-          </BorderedBox>
-        </div>
+      <div class="home-intro">
+        <p class="summary">
+          <span class="text-primary">DADDY'S DOLLHOUSE</span> IS AN{' '}
+          <span class="text-mature">ADULTS ONLY</span> FORUM DEDICATED TO THE JUDGE-FREE
+          DISCUSSION OF{' '}
+          <span class="text-primary">GIANT MEN</span> &amp;{' '}
+          <span class="text-primary">tiny women</span>
+        </p>
+        <BorderedButton
+          href="https://forum.daddysdollhouse.org"
+          ornamentPosition="left"
+          class="btn-enter"
+        >
+          Enter Forum
+        </BorderedButton>
       </div>
     </div>
   </div>

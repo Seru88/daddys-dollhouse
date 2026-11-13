@@ -17,22 +17,10 @@ const {
   noindex = false,
 } = Astro.props;
 
-const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const site = Astro.site ?? new URL('https://daddysdollhouse.org');
 const pageTitle = `${title} | Daddy’s Dollhouse`;
 const canonical = new URL(Astro.url.pathname, site).href;
 const socialImage = new URL('/og-default.jpg', site).href;
-
-const navItems = [
-  { href: '/about/', label: 'About' },
-  { href: '/rules/', label: 'Rules' },
-  { href: '/resources/', label: 'Resources' },
-  { href: '/dictionary/', label: 'Dictionary' },
-];
-const isCurrent = (href: string) => {
-  const path = href.replace(/\/$/, '') || '/';
-  return currentPath === path || currentPath.startsWith(`${path}/`);
-};
 ---
 
 <!doctype html>
@@ -97,42 +85,6 @@ const isCurrent = (href: string) => {
   </head>
   <body id="top">
     <a class="skip-link" href="#page-title">Skip to content</a>
-
-    <header class="site-header">
-      <div class="site-header-inner">
-        <a
-          class="site-brand"
-          href="/"
-          aria-current={currentPath === '/' ? 'page' : undefined}
-        >
-          Daddy’s Dollhouse
-        </a>
-        <nav class="site-nav" aria-label="Primary">
-          <ul>
-            {
-              navItems.map(item => (
-                <li>
-                  <a
-                    href={item.href}
-                    aria-current={isCurrent(item.href) ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))
-            }
-            <li>
-              <a
-                class="site-nav-forum"
-                href="https://forum.daddysdollhouse.org"
-              >
-                Forum
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
 
     <main id="main" class="site-main" tabindex="-1">
       <slot />
