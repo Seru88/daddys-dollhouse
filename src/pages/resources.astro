@@ -1,9 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 import SiteNav from '../components/SiteNav.astro';
 import HeroImg from '../components/HeroImg.astro';
-import { crossDissolve } from '../transitions';
+import { growFade } from '../transitions';
 import heroResources from '../images/hero_kink_resources.webp';
 ---
 
@@ -14,9 +13,8 @@ import heroResources from '../images/hero_kink_resources.webp';
   <div class="container">
     <HeroImg src={heroResources} alt="" />
     <SiteNav />
-    <div class="page-body" transition:animate={crossDissolve}>
-      <Breadcrumb current="Kink Resources" />
-      <h1 class="page-title" id="page-title" tabindex="-1">KINK RESOURCES</h1>
+    <div class="page-body" transition:animate={growFade}>
+      <h1 class="page-title" id="page-title" tabindex="-1">Kink Resources</h1>
       <hr class="divider" />
       <section class="section">
         <p class="lead">
@@ -52,7 +50,7 @@ import heroResources from '../images/hero_kink_resources.webp';
       <hr class="divider" />
       <section class="section">
         <h2 class="section-title" id="before-we-dive-in">
-          BEFORE WE DIVE IN...
+          Before we dive in...
         </h2>
         <p>
           Hello and welcome to Daddy’s Dollhouse Size-kink Guide, written by me,{
@@ -90,7 +88,11 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-1">1. DON’T BEAT YOURSELF UP</h2>
+        <h2 class="section-title numbered" id="step-1">
+          <span class="section-num">1.</span>{' '}<span class="section-text"
+            >Don’t beat yourself up</span
+          >
+        </h2>
         <p>
           It’s easy for someone with a size kink to think of themselves as
           sexually damaged goods for having to live out their lifetime with such
@@ -122,8 +124,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-2">
-          2. FIND A SUPPORTIVE OUTLET THAT WORKS FOR YOU
+        <h2 class="section-title numbered" id="step-2">
+          <span class="section-num">2.</span>{' '}<span class="section-text"
+            >Find a supportive outlet that works for you</span
+          >
         </h2>
         <p>
           One of the first really challenging hurdles for any person with a
@@ -181,8 +185,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-3">
-          3. WORK TOWARDS SELF-ACCEPTANCE
+        <h2 class="section-title numbered" id="step-3">
+          <span class="section-num">3.</span>{' '}<span class="section-text"
+            >Work towards self-acceptance</span
+          >
         </h2>
         <p>
           Finding pride in something you’ve promised to never tell a soul about
@@ -233,8 +239,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-4">
-          4. CONSIDER WHO YOU SHARE WITH
+        <h2 class="section-title numbered" id="step-4">
+          <span class="section-num">4.</span>{' '}<span class="section-text"
+            >Consider who you share with</span
+          >
         </h2>
         <p>
           One way to find peace and validation is telling others close to you
@@ -291,7 +299,11 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-5">5. BE BRAVE</h2>
+        <h2 class="section-title numbered" id="step-5">
+          <span class="section-num">5.</span>{' '}<span class="section-text"
+            >Be brave</span
+          >
+        </h2>
         <p>
           Now that you’ve decided to come out to your significant other, you’ll
           need to find your courage. Speak to any macrophile or microphile who’s
@@ -342,7 +354,11 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-6">6. OWN YOUR KINK</h2>
+        <h2 class="section-title numbered" id="step-6">
+          <span class="section-num">6.</span>{' '}<span class="section-text"
+            >Own your kink</span
+          >
+        </h2>
         <p>
           Now that you’ve decided to come out, it’s time to actually own your
           kink. It doesn’t matter if you’ve hooked up with a kinky person or
@@ -382,7 +398,11 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-7">7. BE PATIENT</h2>
+        <h2 class="section-title numbered" id="step-7">
+          <span class="section-num">7.</span>{' '}<span class="section-text"
+            >Be patient</span
+          >
+        </h2>
         <p>
           Having come out to them and now told them many of your fantasies, you
           may want to believe things might finally start to click. But
@@ -441,8 +461,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-8">
-          8. CONSIDER SHARING HOW YOUR KINK AFFECTS YOU
+        <h2 class="section-title numbered" id="step-8">
+          <span class="section-num">8.</span>{' '}<span class="section-text"
+            >Consider sharing how your kink affects you</span
+          >
         </h2>
         <p>
           As many of you know, our kink can affect us in many ways, even in ways
@@ -518,8 +540,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-9">
-          9. BUILD A FOUNDATION FOR SIZEPLAY
+        <h2 class="section-title numbered" id="step-9">
+          <span class="section-num">9.</span>{' '}<span class="section-text"
+            >Build a foundation for sizeplay</span
+          >
         </h2>
         <p>
           Now that your partner has somewhat of an idea of what turns you on,
@@ -557,7 +581,11 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-10">10. CONSIDER BDSM PRINCIPLES</h2>
+        <h2 class="section-title numbered" id="step-10">
+          <span class="section-num">10.</span>{' '}<span class="section-text"
+            >Consider BDSM principles</span
+          >
+        </h2>
         <p>
           As mentioned earlier, the BDSM community is a great source of
           information on how to play out your fantasies in reality. These
@@ -723,7 +751,11 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-11">11. BE MINDFUL OF YOUR WORDS</h2>
+        <h2 class="section-title numbered" id="step-11">
+          <span class="section-num">11.</span>{' '}<span class="section-text"
+            >Be mindful of your words</span
+          >
+        </h2>
         <p>
           Remember, as you both begin to engage in structured play, let them
           know how they’re doing! As mentioned earlier, your partner is playing
@@ -749,8 +781,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-12">
-          12. HELP YOUR PARTNER FIND THEIR OWN VOICE
+        <h2 class="section-title numbered" id="step-12">
+          <span class="section-num">12.</span>{' '}<span class="section-text"
+            >Help your partner find their own voice</span
+          >
         </h2>
         <p>
           Building confidence is <strong>extremely important!</strong> If your partner
@@ -810,8 +844,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-13">
-          13. TRY AND BE THE BEST GIANT AND/OR TINY YOU CAN BE!
+        <h2 class="section-title numbered" id="step-13">
+          <span class="section-num">13.</span>{' '}<span class="section-text"
+            >Try and be the best Giant and/or tiny you can be!</span
+          >
         </h2>
         <p>
           As mentioned before, it’s important to be open to your partner trying
@@ -908,8 +944,10 @@ import heroResources from '../images/hero_kink_resources.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title" id="step-14">
-          14. EMBRACE YOUR CREATIVITY TO LIVE OUT THE FANTASY
+        <h2 class="section-title numbered" id="step-14">
+          <span class="section-num">14.</span>{' '}<span class="section-text"
+            >Embrace your creativity to live out the fantasy</span
+          >
         </h2>
         <p>
           While our fantasies don’t live in reality, there are many ways couples
@@ -917,7 +955,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           not work for everyone, but hopefully they’ll give you the inspiration
           needed to find something that works for you and your partner!
         </p>
-        <h3 class="section-title subsection-title">Using Perspective</h3>
+        <h3 class="section-title subsection-title">Using perspective</h3>
         <p class="nested">
           One of the easiest types of sizeplay to master is using perspective to
           your benefit. While having a taller partner might make things a little
@@ -956,7 +994,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           submissive!
         </p>
         <h3 class="section-title subsection-title">
-          Using Sex-Friendly P.O.V. (Point-of-View)
+          Using sex-friendly P.O.V. (point-of-view)
         </h3>
         <p class="nested">
           While sexual scenes can easily be played without intercourse, I get a
@@ -1017,7 +1055,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           they cannot see their submissive. I highly recommend any Dominant
           engaging in breathe play to consider learning CPR.
         </p>
-        <h3 class="section-title subsection-title">Using Clothing</h3>
+        <h3 class="section-title subsection-title">Using clothing</h3>
         <p class="nested">
           Clothing is another fun way to assert dominance or set a size scene.
           Many Giants for example will utilize oversized clothing to make their
@@ -1039,7 +1077,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           visually pleasing for him as well as following through on a task he’s
           assigned me.
         </p>
-        <h3 class="section-title subsection-title">Using Your Body</h3>
+        <h3 class="section-title subsection-title">Using your body</h3>
         <p class="nested">
           Body worship is commonplace in kinky play and especially so for those
           with a size fetish. And while I could argue this may be more
@@ -1061,7 +1099,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           to their Dominant to not be treated as an equal person in polite
           society, which can be an arousing feeling for many submissives.
         </p>
-        <h3 class="section-title subsection-title">Using Smell</h3>
+        <h3 class="section-title subsection-title">Using smell</h3>
         <p class="nested">
           Being gigantic around a tiny, you would assume that smells might be
           more pronounced, so it's no surprise that bodily smells also play a
@@ -1101,7 +1139,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           during sex, and using it as a tool for humiliation can be very
           effective at enhancing orgasms.
         </p>
-        <h3 class="section-title subsection-title">Using Touch</h3>
+        <h3 class="section-title subsection-title">Using touch</h3>
         <p class="nested">
           Touch can also have a big impact on sexual arousal, and thankfully
           with some very basic tools, even touch from a normal sized partner can
@@ -1129,7 +1167,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           Dominant can feel like Giant tongue getting very personal. A gushing
           hot shower head can feel like a humiliating cum or piss bath.
         </p>
-        <h3 class="section-title subsection-title">Using Demands</h3>
+        <h3 class="section-title subsection-title">Using demands</h3>
         <p class="nested">
           If your or your partner are into bondage or caging, the Dominant would
           naturally want to do it by force or authority. Unfortunately, because
@@ -1162,7 +1200,7 @@ import heroResources from '../images/hero_kink_resources.webp';
           to do some research if this is a technique that piques your interest.
         </p>
         <h3 class="section-title subsection-title">
-          Using Technology to Immerse Yourself
+          Using technology to immerse yourself
         </h3>
         <p class="nested">
           While technology might not be exactly where we need it to be to fulfil

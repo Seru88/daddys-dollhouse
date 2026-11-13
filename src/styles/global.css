@@ -68,6 +68,15 @@
     var(--primary-light),
     var(--primary-dark)
   );
+  /* The frame's side gradient reaches full dark at the hero's bottom edge,
+     then stays dark. 33vw tracks the hero's aspect ratio; the clamp covers
+     narrow and very wide viewports. */
+  --frame-border: linear-gradient(
+    to bottom,
+    var(--primary-light) 0,
+    var(--primary-dark) clamp(90px, calc(33vw - 4px), 430px),
+    var(--primary-dark) 100%
+  );
   --font-body: 'Courier Prime', 'Courier New', monospace;
   --font-display: 'AKA Posse', 'Courier Prime', serif;
   --shadow-button: 4px 4px 0 rgba(0, 0, 0, 0.35);
@@ -102,6 +111,21 @@ body {
   font-weight: 400;
   line-height: 1.6;
   font-synthesis: none;
+}
+
+.site-frame {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  background-color: var(--bg);
+  border-top: var(--border) solid;
+  border-right: var(--border) solid transparent;
+  border-bottom: var(--border) solid transparent;
+  border-left: var(--border) solid transparent;
+  border-image: var(--frame-border) 1;
 }
 
 .site-main {
@@ -165,7 +189,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-3) var(--space-4);
+  /* 8px + 32px line + 8px keeps the row short without letting the 24px
+     corner motifs meet */
+  padding: var(--space-2) var(--space-4);
   color: var(--primary);
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -229,19 +255,18 @@ body {
 
 .site-footer {
   width: 100%;
-  max-width: var(--page-max);
-  margin: 0 auto;
-  border-top: 1px solid var(--primary-dark);
+  margin: 0;
   background-color: var(--bg);
+  border-top: var(--border) solid var(--primary-dark);
 }
 
 .site-footer-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: var(--space-2) var(--space-4);
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-2) var(--space-4);
 }
 
 .site-footer-note {
@@ -256,7 +281,7 @@ body {
 @media (max-width: 599.95px) {
   .site-footer-inner {
     justify-content: center;
-    padding: var(--space-3);
+    padding: var(--space-2) var(--space-3);
     text-align: center;
   }
 }
@@ -353,16 +378,33 @@ a.btn {
 /* the home title has no color prop, only its highlighted part */
 .page-title.plain {
   color: var(--text);
+  margin-bottom: var(--home-rhythm);
 }
 
+/* AKA Posse has no true lowercase: its lowercase glyphs are small caps, so
+   section headings render as small caps. Only the page title shouts. */
 .section-title {
   margin: 0 0 0.6em;
   scroll-margin-top: var(--space-4);
   color: var(--text);
-  font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   line-height: 1.2;
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  /* balance left a big gap after the first line here; pretty fills the line
+     but still avoids a one-word tail. The plain wrap is the fallback for
+     engines without pretty. */
+  text-wrap: wrap;
+  text-wrap: pretty;
+}
+
+/* Numbered headings hang the numeral in its own column, so a wrapped line
+   lines up with the text rather than running back under the number. The
+   column is a fixed width so every heading on a page starts at the same x,
+   whatever the number is. */
+.section-title.numbered {
+  display: grid;
+  grid-template-columns: 1.2em 1fr;
+  column-gap: 0.3em;
 }
 
 .subsection-title {
@@ -382,7 +424,13 @@ a.btn {
   line-height: 1.25;
   letter-spacing: 0.02em;
   text-align: center;
+  text-transform: uppercase;
   text-wrap: balance;
+}
+
+/* deliberate: the "tiny women" half of the tagline drops to small caps */
+.summary-tiny {
+  text-transform: none;
 }
 
 .lead {
@@ -393,6 +441,12 @@ a.btn {
   font-size: 1.0625rem;
   line-height: 1.6;
   text-align: center;
+}
+
+/* a lead that ends its section would add its margin on top of the section
+   padding, making the block sit closer to the rule above than the one below */
+.section > .lead:last-child {
+  margin-bottom: 0;
 }
 
 .page-toc {
@@ -461,13 +515,8 @@ a.btn {
   position: relative;
   flex: 1 1 auto;
   width: 100%;
-  max-width: var(--page-max);
   min-height: 0;
-  margin: 0 auto;
-  background-color: var(--bg);
-  border-left: var(--border) solid transparent;
-  border-right: var(--border) solid transparent;
-  border-image: var(--gradient-border) 1;
+  margin: 0;
 }
 
 .page-body {
@@ -479,53 +528,14 @@ a.btn {
 
 /* the home and 404 shells keep the full container width */
 .page-body.padded {
+  /* one rhythm for the home title, tagline and CTA */
+  --home-rhythm: clamp(var(--space-5), 3.5vw, var(--space-6));
   max-width: none;
   padding: var(--space-4) var(--space-4) var(--space-7);
 }
 
 .section {
   padding: var(--space-4);
-}
-
-.breadcrumb {
-  margin: 0 0 var(--space-3);
-  font-size: 0.875rem;
-}
-
-.breadcrumb ol {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.breadcrumb li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.breadcrumb li + li::before {
-  color: var(--text-dim);
-  content: '/';
-}
-
-.breadcrumb a {
-  display: inline-block;
-  /* enlarge the hit area to at least 24px without moving the text */
-  margin: -4px -6px;
-  padding: 4px 6px;
-  letter-spacing: var(--tracking);
-  text-transform: uppercase;
-}
-
-.breadcrumb [aria-current='page'] {
-  color: var(--text-dim);
-  letter-spacing: var(--tracking);
-  text-transform: uppercase;
 }
 
 .divider {
@@ -547,16 +557,11 @@ a.btn {
   .section {
     padding: var(--space-4) 0;
   }
-
-  .breadcrumb {
-    margin-bottom: var(--space-3);
-  }
 }
 
 @media (max-width: 959.95px) {
   /* leave a gutter either side so the body tile shows through */
-  .container,
-  .site-footer {
+  .site-frame {
     width: auto;
     margin: 0 12px;
   }
@@ -568,13 +573,7 @@ a.btn {
   width: 100%;
   height: auto;
   margin-bottom: var(--space-5);
-  border-bottom: var(--border) solid;
-  border-image: linear-gradient(
-      to left,
-      var(--primary-light),
-      var(--primary-dark)
-    )
-    1;
+  border-bottom: var(--border) solid var(--primary-dark);
 }
 
 /* ---------- bordered box ---------- */
@@ -674,7 +673,8 @@ a.btn {
 .btn-ornament {
   position: absolute;
   top: 0;
-  width: 30px;
+  /* keep this in sync with the nav frame's motifSize (24) */
+  width: 24px;
   height: auto;
 }
 
@@ -718,7 +718,7 @@ a.btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--home-rhythm);
   width: 100%;
   max-width: 560px;
   margin: 0 auto;
@@ -828,11 +828,6 @@ a.btn {
 }
 
 /* ---------- dictionary ---------- */
-.tag-intro {
-  max-width: var(--measure);
-  margin-bottom: var(--space-4);
-}
-
 .tag-filter {
   display: flex;
   flex-wrap: wrap;
@@ -1021,6 +1016,14 @@ a.btn {
 }
 
 /* ---------- page transitions ---------- */
+/* growFade runs on the view-transition snapshots, whose default origin is the
+   centre of the element. On a tall page that would drag the first screen down
+   by hundreds of pixels, so anchor the snapshots to the top instead. */
+::view-transition-old(*),
+::view-transition-new(*) {
+  transform-origin: 50% 0;
+}
+
 @keyframes growIn {
   from {
     opacity: 0;
@@ -1040,30 +1043,6 @@ a.btn {
   to {
     opacity: 0;
     transform: scale(0.96);
-  }
-}
-
-@keyframes fadeOutHold {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeInHold {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 

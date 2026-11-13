@@ -4,9 +4,10 @@ import containerInfo from '../images/container_info.webp';
 
 interface Props {
   minHeight?: number;
+  motifSize?: number;
 }
 
-const { minHeight } = Astro.props;
+const { minHeight, motifSize = 50 } = Astro.props;
 
 // the frame is drawn from a 350px wide copy - the size the old
 // gatsby-image fluid(maxWidth: 350) source used
@@ -16,7 +17,7 @@ const frame = await getImage({ src: containerInfo, width: 350 });
 <div class="bordered-box">
   <div
     class="bordered-box-inner"
-    style={`border-image: url(${frame.src}) 50 / 50px repeat;${
+    style={`border-image: url(${frame.src}) 50 / ${motifSize}px repeat;${
       minHeight ? `min-height: ${minHeight}px;` : ''
     }`}
   >

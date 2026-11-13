@@ -1,9 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 import SiteNav from '../components/SiteNav.astro';
 import HeroImg from '../components/HeroImg.astro';
-import { crossDissolve } from '../transitions';
+import { growFade } from '../transitions';
 import heroAbout from '../images/hero_about.webp';
 ---
 
@@ -14,9 +13,8 @@ import heroAbout from '../images/hero_about.webp';
   <div class="container">
     <HeroImg src={heroAbout} alt="" />
     <SiteNav />
-    <div class="page-body" transition:animate={crossDissolve}>
-      <Breadcrumb current="About Us" />
-      <h1 class="page-title" id="page-title" tabindex="-1">ABOUT US</h1>
+    <div class="page-body" transition:animate={growFade}>
+      <h1 class="page-title" id="page-title" tabindex="-1">About Us</h1>
       <hr class="divider" />
       <section class="section">
         <p class="lead">
@@ -31,7 +29,7 @@ import heroAbout from '../images/hero_about.webp';
       <hr class="divider" />
 
       <section class="section">
-        <h2 class="section-title">WHEN DID THIS COMMUNITY BEGIN?</h2>
+        <h2 class="section-title">When did this community begin?</h2>
         <p>
           While fans of Giant men and tiny women have more than likely existed
           always, the community in earnest began to organize in the 90’s and
@@ -47,7 +45,7 @@ import heroAbout from '../images/hero_about.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">HOW WILL THIS COMMUNITY BE DIFFERENT?</h2>
+        <h2 class="section-title">How will this community be different?</h2>
         <p>
           We hope to achieve our goal of reuniting the community by being
           respectful, inclusive and above all empowering! A community isn’t
@@ -73,8 +71,8 @@ import heroAbout from '../images/hero_about.webp';
       <hr class="divider" />
       <section class="section">
         <h2 class="section-title">
-          CAN I REALLY DISCUSS OR SHARE CONTENT ABOUT NON-CONSENSUAL, CRUEL,
-          HUMILIATING, ETC TYPE FANTASIES AT DADDY’S DOLLHOUSE?
+          Can I really discuss or share content about non-consensual, cruel,
+          humiliating, etc type fantasies at Daddy’s Dollhouse?
         </h2>
         <p>
           Yes! Our forum is focused on FANTASY. Last we checked, fantasy is not
@@ -111,7 +109,7 @@ import heroAbout from '../images/hero_about.webp';
       <hr class="divider" />
       <section class="section">
         <h2 class="section-title">
-          WHY DOES THIS SITE USE THE ACRONYM “M/f” VERSUS THE TRADITIONAL “SW”?
+          Why does this site use the acronym “M/f” versus the traditional “SW”?
         </h2>
         <p>
           While both <em>M/f</em> (Giant male / tiny female) and <em>SW</em>{
@@ -141,7 +139,7 @@ import heroAbout from '../images/hero_about.webp';
       </section>
       <hr class="divider" />
       <section class="section">
-        <h2 class="section-title">WHO CREATED THIS WEBSITE?</h2>
+        <h2 class="section-title">Who created this website?</h2>
         <p>
           This site was constructed in early 2021 by kinky duo{' '}
           <a href="https://forum.daddysdollhouse.org/user/jitensha">Jitensha</a
